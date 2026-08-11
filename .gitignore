@@ -1,0 +1,24 @@
+﻿# Local environment
+.env
+
+# Python / bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtualenvs
+venv/
+.venv/
+
+# Local data & DB
+data/storage.db
+data/files/
+data/chromadb/
+
+# IDEs / editors
+.vscode/
+.idea/
+
+# Logs, caches
+*.log
+.pytest_cache/
