@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *.pyo
-
-# Virtual environments
 .venv/
 venv/
 env/
@@ -13,7 +11,7 @@ env/
 .env.*
 !.env.example
 
-# Database
+# Databases
 *.db
 *.sqlite
 *.sqlite3
@@ -23,13 +21,8 @@ chroma/
 chromadb/
 .chroma/
 
-# Node
+# Frontend
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-
-# Frontend build
 dist/
 build/
 
@@ -37,15 +30,9 @@ build/
 .vscode/
 .idea/
 
+# Logs
+*.log
+
 # OS
 .DS_Store
 Thumbs.db
-
-# Temporary/test files
-temp_test.txt
-*.tmp
-
-# Python test/cache
-.pytest_cache/
-.coverage
-htmlcov/
