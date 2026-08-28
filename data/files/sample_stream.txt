@@ -1,0 +1,2 @@
+This is uploaded as a file-like object.
+Another line.

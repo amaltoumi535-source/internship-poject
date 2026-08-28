@@ -1,0 +1,1 @@
+Amal is building an AI Document Agent SaaS platform for IT-Gate. The system extracts entities, detects language, scores readability, chunks text, generates embeddings, and answers questions using retrieval-augmented generation.
