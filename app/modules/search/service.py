@@ -45,13 +45,13 @@ def _row_get(row, name: str, pos: int):
         return None
 
 
-def search_chunks_like(db: Session, q: str, limit: int = 10, offset: int = 0) -> Tuple[List[Dict], int]:
+def search_chunks_like(db: Session, q: str, user_id: str, limit: int = 10, offset: int = 0) -> Tuple[List[Dict], int]:
     """
-    Perform a case-insensitive LIKE search on chunks.text.
+    Perform a case-insensitive LIKE search on chunks.text, scoped to
+    documents owned by the requesting user.
 
     Returns (results, total). Each result is a dict matching ChunkResult schema:
       {id, document_id, chunk_index, snippet, score}
-    Note: 'chunk_index' in the API output maps to the model's 'chunk_num' column.
     """
     q_norm = _normalize_q(q)
     if q_norm == "":
@@ -60,16 +60,22 @@ def search_chunks_like(db: Session, q: str, limit: int = 10, offset: int = 0) ->
     like_param = f"%{q_norm}%"
 
     count_sql = text(
-        "SELECT COUNT(1) as cnt FROM chunks WHERE lower(text) LIKE :like"
+        "SELECT COUNT(1) as cnt FROM chunks c "
+        "JOIN user_documents ud ON ud.document_id = c.document_id "
+        "WHERE ud.user_id = :user_id AND lower(c.text) LIKE :like"
     )
     rows_sql = text(
-        "SELECT id, document_id, chunk_num, text FROM chunks "
-        "WHERE lower(text) LIKE :like "
-        "ORDER BY id LIMIT :limit OFFSET :offset"
+        "SELECT c.id, c.document_id, c.chunk_num, c.text FROM chunks c "
+        "JOIN user_documents ud ON ud.document_id = c.document_id "
+        "WHERE ud.user_id = :user_id AND lower(c.text) LIKE :like "
+        "ORDER BY c.id LIMIT :limit OFFSET :offset"
     )
 
-    total = db.execute(count_sql, {"like": like_param}).scalar() or 0
-    raw = db.execute(rows_sql, {"like": like_param, "limit": limit, "offset": offset}).fetchall()
+    total = db.execute(count_sql, {"user_id": user_id, "like": like_param}).scalar() or 0
+    raw = db.execute(
+        rows_sql,
+        {"user_id": user_id, "like": like_param, "limit": limit, "offset": offset}
+    ).fetchall()
 
     results = []
     for row in raw:
@@ -94,9 +100,10 @@ def search_chunks_like(db: Session, q: str, limit: int = 10, offset: int = 0) ->
     return results, int(total)
 
 
-def search_chunks_in_document(db: Session, document_id: int, q: str, limit: int = 10, offset: int = 0) -> Tuple[List[Dict], int]:
+def search_chunks_in_document(db: Session, document_id: int, q: str, user_id: str, limit: int = 10, offset: int = 0) -> Tuple[List[Dict], int]:
     """
-    Search within a single document's chunks.
+    Search within a single document's chunks, only if the requesting
+    user owns that document.
     """
     q_norm = _normalize_q(q)
     if q_norm == "":
@@ -104,16 +111,25 @@ def search_chunks_in_document(db: Session, document_id: int, q: str, limit: int 
     like_param = f"%{q_norm}%"
 
     count_sql = text(
-        "SELECT COUNT(1) as cnt FROM chunks WHERE document_id = :doc_id AND lower(text) LIKE :like"
+        "SELECT COUNT(1) as cnt FROM chunks c "
+        "JOIN user_documents ud ON ud.document_id = c.document_id "
+        "WHERE c.document_id = :doc_id AND ud.user_id = :user_id AND lower(c.text) LIKE :like"
     )
     rows_sql = text(
-        "SELECT id, document_id, chunk_num, text FROM chunks "
-        "WHERE document_id = :doc_id AND lower(text) LIKE :like "
-        "ORDER BY id LIMIT :limit OFFSET :offset"
+        "SELECT c.id, c.document_id, c.chunk_num, c.text FROM chunks c "
+        "JOIN user_documents ud ON ud.document_id = c.document_id "
+        "WHERE c.document_id = :doc_id AND ud.user_id = :user_id AND lower(c.text) LIKE :like "
+        "ORDER BY c.id LIMIT :limit OFFSET :offset"
     )
 
-    total = db.execute(count_sql, {"doc_id": document_id, "like": like_param}).scalar() or 0
-    raw = db.execute(rows_sql, {"doc_id": document_id, "like": like_param, "limit": limit, "offset": offset}).fetchall()
+    total = db.execute(
+        count_sql,
+        {"doc_id": document_id, "user_id": user_id, "like": like_param}
+    ).scalar() or 0
+    raw = db.execute(
+        rows_sql,
+        {"doc_id": document_id, "user_id": user_id, "like": like_param, "limit": limit, "offset": offset}
+    ).fetchall()
 
     results = []
     for row in raw:

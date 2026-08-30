@@ -47,10 +47,10 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                 className: "p-4 border-b border-[var(--border-subtle)] flex items-center justify-between",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-2",
+                        className: "flex items-center gap-2.5",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center",
+                                className: "w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-sm shadow-indigo-600/20",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiZap"], {
                                     className: "w-4 h-4 text-white"
                                 }, void 0, false, {
@@ -64,7 +64,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-lg font-bold text-[var(--text-primary)]",
+                                className: "text-[15px] font-bold text-[var(--text-primary)]",
                                 children: "Document Agent"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
@@ -103,7 +103,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                 className: "flex-1 overflow-y-auto p-2 space-y-1",
                 children: NAV_ITEMS.map(({ view, label, icon: Icon })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onViewChange(view),
-                        className: `w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${isActive(view, activeView) ? 'bg-blue-600/30 border border-blue-500/50 text-[var(--text-primary)] backdrop-blur' : 'text-[var(--text-secondary)] hover:bg-[var(--surface-soft)] hover:text-[var(--text-primary)] border border-transparent'}`,
+                        className: `w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${isActive(view, activeView) ? 'bg-indigo-50 border border-indigo-200 text-indigo-700' : 'text-[var(--text-secondary)] hover:bg-[var(--surface-soft)] hover:text-[var(--text-primary)] border border-transparent'}`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
                                 className: "w-4 h-4"
@@ -128,7 +128,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                 className: "px-2 pb-2",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     onClick: ()=>onViewChange('upgrade'),
-                    className: `w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${activeView === 'upgrade' ? 'bg-purple-600/30 border border-purple-500/50 text-[var(--text-primary)]' : 'bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:from-blue-600/20 hover:to-purple-600/20'}`,
+                    className: `w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${activeView === 'upgrade' ? 'bg-indigo-50 border border-indigo-200 text-indigo-700' : 'bg-gradient-to-r from-indigo-50/60 to-amber-50/40 border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:from-indigo-50 hover:to-amber-50'}`,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiZap"], {
                             className: "w-4 h-4"
@@ -157,7 +157,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                         className: "w-full flex items-center gap-3 p-2 hover:bg-[var(--surface-strong)] rounded-lg transition-colors",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm",
+                                className: "w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-semibold text-sm shrink-0",
                                 children: "A"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
@@ -165,10 +165,10 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex-1 text-left",
+                                className: "flex-1 text-left min-w-0",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-sm font-medium text-[var(--text-primary)]",
+                                        className: "text-sm font-medium text-[var(--text-primary)] truncate",
                                         children: "Amal"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
@@ -176,7 +176,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs text-[var(--text-muted)]",
+                                        className: "text-xs text-[var(--text-muted)] truncate",
                                         children: "amal@example.com"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
@@ -190,7 +190,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMoreVertical"], {
-                                className: "w-4 h-4 text-[var(--text-muted)]"
+                                className: "w-4 h-4 text-[var(--text-muted)] shrink-0"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
                                 lineNumber: 119,
@@ -203,7 +203,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                         columnNumber: 9
                     }, this),
                     showProfileMenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute bottom-16 left-2 right-2 bg-[var(--surface-solid)] backdrop-blur-xl border border-[var(--border-subtle)] rounded-lg shadow-xl z-50",
+                        className: "absolute bottom-16 left-2 right-2 bg-[var(--surface-solid)] backdrop-blur-xl border border-[var(--border-subtle)] rounded-xl shadow-lg shadow-black/[0.06] z-50 overflow-hidden animate-fadeIn",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>{
@@ -261,7 +261,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                                         lineNumber: 151,
                                         columnNumber: 15
                                     }, this),
-                                    "Billing & Plans"
+                                    "Billing and plans"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
@@ -277,7 +277,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: onLogout,
-                                className: "w-full flex items-center gap-3 px-4 py-2.5 hover:bg-red-500/20 text-sm text-red-400 transition-colors text-left rounded-b-lg",
+                                className: "w-full flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 text-sm text-red-600 transition-colors text-left",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiLogOut"], {
                                         className: "w-4 h-4"
@@ -286,7 +286,7 @@ function Sidebar({ activeView, onViewChange, onLogout, collapsed = false, onColl
                                         lineNumber: 159,
                                         columnNumber: 15
                                     }, this),
-                                    "Logout"
+                                    "Log out"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/components/Sidebar.tsx",
@@ -333,9 +333,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$
 ;
 const ACCENT_PRESETS = [
     {
-        name: 'Blue / Purple',
-        from: '#3b82f6',
-        to: '#9333ea'
+        name: 'Indigo',
+        from: '#6366f1',
+        to: '#4f46e5'
     },
     {
         name: 'Emerald / Teal',
@@ -358,42 +358,42 @@ const ACCENT_PRESETS = [
         to: '#2563eb'
     }
 ];
-const DEFAULT_MODE = 'dark';
+const DEFAULT_MODE = 'light';
 const DEFAULT_ACCENT = ACCENT_PRESETS[0];
 const STORAGE_KEY = 'agent-theme-prefs';
 const ThemeContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"])(undefined);
 const PALETTES = {
-    dark: {
-        '--bg-app-from': '#0f172a',
-        '--bg-app-via': '#1e293b',
-        '--bg-app-to': '#0f172a',
-        '--surface': 'rgba(30,41,59,0.5)',
-        '--surface-solid': 'rgba(30,41,59,0.95)',
-        '--surface-soft': 'rgba(255,255,255,0.05)',
-        '--surface-strong': 'rgba(255,255,255,0.1)',
-        '--surface-hover': 'rgba(255,255,255,0.1)',
-        '--surface-hover-strong': 'rgba(255,255,255,0.2)',
-        '--border-subtle': 'rgba(255,255,255,0.1)',
-        '--border-strong': 'rgba(255,255,255,0.2)',
-        '--text-primary': '#f8fafc',
-        '--text-secondary': '#cbd5e1',
-        '--text-muted': '#94a3b8'
-    },
     light: {
-        '--bg-app-from': '#f8fafc',
-        '--bg-app-via': '#eef2f7',
-        '--bg-app-to': '#f8fafc',
-        '--surface': 'rgba(255,255,255,0.75)',
+        '--bg-app-from': '#faf7f2',
+        '--bg-app-via': '#f5f1e9',
+        '--bg-app-to': '#faf7f2',
+        '--surface': 'rgba(255,255,255,0.7)',
         '--surface-solid': 'rgba(255,255,255,0.98)',
-        '--surface-soft': 'rgba(15,23,42,0.035)',
-        '--surface-strong': 'rgba(15,23,42,0.06)',
-        '--surface-hover': 'rgba(15,23,42,0.06)',
-        '--surface-hover-strong': 'rgba(15,23,42,0.1)',
-        '--border-subtle': 'rgba(15,23,42,0.1)',
-        '--border-strong': 'rgba(15,23,42,0.16)',
-        '--text-primary': '#0f172a',
-        '--text-secondary': '#475569',
-        '--text-muted': '#64748b'
+        '--surface-soft': 'rgba(15,23,42,0.03)',
+        '--surface-strong': 'rgba(15,23,42,0.05)',
+        '--surface-hover': 'rgba(15,23,42,0.05)',
+        '--surface-hover-strong': 'rgba(15,23,42,0.09)',
+        '--border-subtle': 'rgba(15,23,42,0.08)',
+        '--border-strong': 'rgba(15,23,42,0.14)',
+        '--text-primary': '#1c1a17',
+        '--text-secondary': '#57534e',
+        '--text-muted': '#8a8580'
+    },
+    dark: {
+        '--bg-app-from': '#17151f',
+        '--bg-app-via': '#1e1b29',
+        '--bg-app-to': '#17151f',
+        '--surface': 'rgba(40,36,54,0.5)',
+        '--surface-solid': 'rgba(40,36,54,0.96)',
+        '--surface-soft': 'rgba(255,255,255,0.04)',
+        '--surface-strong': 'rgba(255,255,255,0.08)',
+        '--surface-hover': 'rgba(255,255,255,0.08)',
+        '--surface-hover-strong': 'rgba(255,255,255,0.14)',
+        '--border-subtle': 'rgba(255,255,255,0.1)',
+        '--border-strong': 'rgba(255,255,255,0.18)',
+        '--text-primary': '#f5f3ef',
+        '--text-secondary': '#c9c4bc',
+        '--text-muted': '#948e85'
     }
 };
 function applyToDocument(mode, accent) {
@@ -410,7 +410,6 @@ function ThemeProvider({ children }) {
     const [mode, setModeState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(DEFAULT_MODE);
     const [accent, setAccentState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(DEFAULT_ACCENT);
     const [hydrated, setHydrated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Load saved prefs on mount
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
@@ -424,7 +423,6 @@ function ThemeProvider({ children }) {
         }
         setHydrated(true);
     }, []);
-    // Apply + persist whenever prefs change
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!hydrated) return;
         applyToDocument(mode, accent);
@@ -454,7 +452,7 @@ function ThemeProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/frontend/app/chat/contexts/ThemeContext.tsx",
-        lineNumber: 116,
+        lineNumber: 114,
         columnNumber: 5
     }, this);
 }
@@ -608,17 +606,24 @@ function ChatView() {
     const [input, setInput] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    // Load chats on mount
+    const messagesEndRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         loadChats();
     }, []);
-    // Load messages when chat changes
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (currentChat) {
             loadMessages(currentChat);
         }
     }, [
         currentChat
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        messagesEndRef.current?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }, [
+        messages,
+        loading
     ]);
     const loadChats = async ()=>{
         try {
@@ -682,7 +687,6 @@ function ChatView() {
             const response = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].chat(input, currentChat);
             setInput('');
             await loadMessages(currentChat);
-            // Update chat title if it's still "New Chat"
             const chat = chats.find((c)=>c.id === currentChat);
             if (chat?.title === 'New Chat') {
                 const title = input.substring(0, 50);
@@ -696,212 +700,300 @@ function ChatView() {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex h-full bg-slate-900",
+        className: "flex h-full",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-64 bg-slate-800 border-r border-slate-700 flex flex-col",
+                className: "w-64 bg-[var(--surface)] border-r border-[var(--border-subtle)] flex flex-col shrink-0",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: handleNewChat,
-                        className: "m-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg flex items-center justify-center gap-2 transition",
+                        className: "m-3 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl flex items-center justify-center gap-2 text-sm font-medium transition-all shadow-sm shadow-indigo-600/20",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiPlus"], {
-                                className: "w-5 h-5"
+                                className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                lineNumber: 124,
+                                lineNumber: 126,
                                 columnNumber: 11
                             }, this),
-                            "New Chat"
+                            "New chat"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                        lineNumber: 120,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex-1 overflow-y-auto",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-2 p-2",
-                            children: chats.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-gray-400 text-sm text-center py-4",
-                                children: "No chats yet"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                lineNumber: 131,
-                                columnNumber: 15
-                            }, this) : chats.map((chat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-1 px-2 py-1 group",
+                        className: "flex-1 overflow-y-auto px-2 pb-2",
+                        children: chats.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center py-10 px-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMessageSquare"], {
+                                    className: "w-7 h-7 text-[var(--text-muted)] mx-auto mb-2"
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                    lineNumber: 133,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[var(--text-muted)] text-sm",
+                                    children: "No chats yet"
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                    lineNumber: 134,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                            lineNumber: 132,
+                            columnNumber: 13
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-1",
+                            children: chats.map((chat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-1 group",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>setCurrentChat(chat.id),
-                                            className: `flex-1 text-left px-3 py-2 rounded-lg transition ${currentChat === chat.id ? 'bg-green-600 text-white' : 'text-gray-300 hover:bg-slate-700'}`,
+                                            className: `flex-1 min-w-0 text-left px-3 py-2.5 rounded-xl transition-all ${currentChat === chat.id ? 'bg-indigo-50 border border-indigo-200' : 'border border-transparent hover:bg-[var(--surface-soft)]'}`,
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "truncate text-sm font-medium",
+                                                    className: `truncate text-sm font-medium ${currentChat === chat.id ? 'text-indigo-700' : 'text-[var(--text-primary)]'}`,
                                                     children: chat.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                                    lineNumber: 143,
+                                                    lineNumber: 148,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-xs text-gray-400",
+                                                    className: "text-xs text-[var(--text-muted)]",
                                                     children: new Date(chat.created_at).toLocaleDateString()
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                                    lineNumber: 144,
+                                                    lineNumber: 151,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 140,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: (e)=>handleDeleteChat(chat.id, e),
-                                            className: "p-2 text-red-400 hover:bg-red-600/20 rounded transition opacity-0 group-hover:opacity-100",
+                                            className: "p-2 text-[var(--text-muted)] hover:text-red-600 hover:bg-red-50 rounded-lg transition-all opacity-0 group-hover:opacity-100 shrink-0",
                                             title: "Delete chat",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiTrash2"], {
-                                                className: "w-4 h-4"
+                                                className: "w-3.5 h-3.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 160,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 155,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, chat.id, true, {
                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 139,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                            lineNumber: 129,
-                            columnNumber: 11
+                            lineNumber: 137,
+                            columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                        lineNumber: 128,
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                lineNumber: 119,
+                lineNumber: 121,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 flex flex-col",
+                className: "flex-1 flex flex-col min-w-0",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex-1 overflow-y-auto p-4 space-y-4",
+                        className: "flex-1 overflow-y-auto p-6 space-y-4",
                         children: [
                             !currentChat ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center justify-center h-full text-gray-400",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    children: "Select or create a chat to start"
-                                }, void 0, false, {
-                                    fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 168,
-                                    columnNumber: 15
-                                }, this)
-                            }, void 0, false, {
+                                className: "flex flex-col items-center justify-center h-full text-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mb-3",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMessageSquare"], {
+                                            className: "w-5 h-5 text-indigo-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                            lineNumber: 176,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                        lineNumber: 175,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-[var(--text-secondary)] text-sm",
+                                        children: "Select or create a chat to start"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                        lineNumber: 178,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                lineNumber: 167,
+                                lineNumber: 174,
                                 columnNumber: 13
                             }, this) : messages.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center justify-center h-full text-gray-400",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    children: "Start a conversation!"
-                                }, void 0, false, {
-                                    fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 172,
-                                    columnNumber: 15
-                                }, this)
-                            }, void 0, false, {
+                                className: "flex flex-col items-center justify-center h-full text-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mb-3",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMessageSquare"], {
+                                            className: "w-5 h-5 text-indigo-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                            lineNumber: 183,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                        lineNumber: 182,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-[var(--text-secondary)] text-sm",
+                                        children: "Ask a question about your documents to get started"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                        lineNumber: 185,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                lineNumber: 171,
+                                lineNumber: 181,
                                 columnNumber: 13
                             }, this) : messages.map((msg)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: `flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`,
+                                    className: `flex animate-fadeIn ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${msg.type === 'user' ? 'bg-blue-600 text-white rounded-br-none' : 'bg-slate-700 text-gray-100 rounded-bl-none'}`,
+                                        className: `max-w-lg px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${msg.type === 'user' ? 'bg-indigo-600 text-white rounded-br-sm' : 'bg-[var(--surface-strong)] text-[var(--text-primary)] rounded-bl-sm border border-[var(--border-subtle)]'}`,
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm",
+                                                className: "whitespace-pre-wrap",
                                                 children: msg.content
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                                lineNumber: 187,
+                                                lineNumber: 200,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-xs opacity-70 mt-1",
+                                                className: `text-[11px] mt-1.5 ${msg.type === 'user' ? 'text-indigo-100' : 'text-[var(--text-muted)]'}`,
                                                 children: new Date(msg.timestamp).toLocaleTimeString()
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                                lineNumber: 188,
+                                                lineNumber: 201,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 193,
                                         columnNumber: 17
                                     }, this)
                                 }, msg.id, false, {
                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 176,
+                                    lineNumber: 189,
                                     columnNumber: 15
                                 }, this)),
                             loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-start",
+                                className: "flex justify-start animate-fadeIn",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-slate-700 text-gray-100 px-4 py-2 rounded-lg",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-sm",
-                                        children: "Agent is thinking..."
-                                    }, void 0, false, {
+                                    className: "bg-[var(--surface-strong)] border border-[var(--border-subtle)] px-4 py-3 rounded-2xl rounded-bl-sm",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-1.5",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce",
+                                                style: {
+                                                    animationDelay: '0ms'
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                                lineNumber: 212,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce",
+                                                style: {
+                                                    animationDelay: '150ms'
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                                lineNumber: 213,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce",
+                                                style: {
+                                                    animationDelay: '300ms'
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                                lineNumber: 214,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                        lineNumber: 198,
+                                        lineNumber: 211,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 210,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                lineNumber: 196,
+                                lineNumber: 209,
                                 columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                ref: messagesEndRef
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
+                                lineNumber: 219,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                        lineNumber: 165,
+                        lineNumber: 172,
                         columnNumber: 9
                     }, this),
                     error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-2 mx-4 mb-2 rounded",
+                        className: "bg-red-50 border border-red-200 text-red-700 px-4 py-2 mx-6 mb-2 rounded-xl text-sm",
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                        lineNumber: 206,
+                        lineNumber: 224,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                         onSubmit: handleSendMessage,
-                        className: "p-4 border-t border-slate-700",
+                        className: "p-4 border-t border-[var(--border-subtle)] bg-[var(--surface)]",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex gap-2",
+                            className: "flex gap-2 max-w-3xl mx-auto",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                     type: "text",
@@ -909,49 +1001,49 @@ function ChatView() {
                                     onChange: (e)=>setInput(e.target.value),
                                     placeholder: "Ask a question...",
                                     disabled: !currentChat || loading,
-                                    className: "flex-1 px-4 py-2 bg-slate-800 text-white rounded border border-slate-700 focus:outline-none focus:border-blue-500 disabled:opacity-50"
+                                    className: "flex-1 px-4 py-2.5 bg-stone-50 text-[var(--text-primary)] rounded-xl border border-[var(--border-strong)] placeholder-[var(--text-muted)] focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 disabled:opacity-50 transition-all text-sm"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 232,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "submit",
-                                    disabled: !currentChat || loading,
-                                    className: "px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 transition flex items-center gap-2",
-                                    children: loading ? '...' : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiSend"], {
-                                        className: "w-5 h-5"
+                                    disabled: !currentChat || loading || !input.trim(),
+                                    className: "px-5 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center gap-2 shadow-sm shadow-indigo-600/20",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiSend"], {
+                                        className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                        lineNumber: 227,
-                                        columnNumber: 34
+                                        lineNumber: 245,
+                                        columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                                    lineNumber: 222,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                            lineNumber: 213,
+                            lineNumber: 231,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                        lineNumber: 212,
+                        lineNumber: 230,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-                lineNumber: 163,
+                lineNumber: 170,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/chat/views/ChatView.tsx",
-        lineNumber: 117,
+        lineNumber: 119,
         columnNumber: 5
     }, this);
 }
@@ -977,14 +1069,11 @@ function isValidHex(value) {
 }
 function DesignView() {
     const { mode, setMode, accent, setAccent, reset } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$app$2f$chat$2f$contexts$2f$ThemeContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useTheme"])();
-    // Draft state — what the user is currently choosing/previewing.
-    // Nothing here touches the rest of the app until "Apply" is clicked.
     const [draftMode, setDraftMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(mode);
     const [draftAccent, setDraftAccent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(accent);
     const [customFrom, setCustomFrom] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(accent.from);
     const [customTo, setCustomTo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(accent.to);
     const [justApplied, setJustApplied] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // If the applied theme changes elsewhere (e.g. reset, or loaded from storage), sync the draft to match
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         setDraftMode(mode);
         setDraftAccent(accent);
@@ -1010,7 +1099,7 @@ function DesignView() {
         setTimeout(()=>setJustApplied(false), 2000);
     };
     const handleReset = ()=>{
-        reset(); // applies + persists the defaults immediately; the effect above syncs the draft to match
+        reset();
     };
     const isPresetActive = (preset)=>preset.name === draftAccent.name;
     const previewPalette = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$app$2f$chat$2f$contexts$2f$ThemeContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PALETTES"][draftMode];
@@ -1027,56 +1116,56 @@ function DesignView() {
                                 children: "Customize your agent"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 55,
+                                lineNumber: 52,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xs text-[var(--text-muted)] mt-1",
-                                children: "Preview your changes, then click Apply to update the whole agent."
+                                children: "Preview your changes, then click apply to update the whole agent."
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 56,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                        lineNumber: 54,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: handleApply,
                         disabled: !hasChanges,
-                        className: `flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all shrink-0 ${hasChanges ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-blue-500/30' : 'bg-[var(--surface-strong)] text-[var(--text-muted)] cursor-not-allowed'}`,
+                        className: `flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all shrink-0 ${hasChanges ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-600/20' : 'bg-[var(--surface-strong)] text-[var(--text-muted)] cursor-not-allowed'}`,
                         children: justApplied ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheckCircle"], {
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                    lineNumber: 71,
+                                    lineNumber: 68,
                                     columnNumber: 15
                                 }, this),
                                 "Applied"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                            lineNumber: 70,
+                            lineNumber: 67,
                             columnNumber: 13
                         }, this) : 'Apply'
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                        lineNumber: 60,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                lineNumber: 53,
+                lineNumber: 50,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6",
+                className: "flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fadeIn",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "lg:col-span-2 space-y-6",
@@ -1085,74 +1174,25 @@ function DesignView() {
                                 className: "bg-[var(--surface)] border border-[var(--border-subtle)] rounded-2xl p-5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
                                         children: "Appearance"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "grid grid-cols-2 gap-3",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setDraftMode('dark'),
-                                                className: `flex items-center gap-3 p-4 rounded-xl border transition-all ${draftMode === 'dark' ? 'bg-blue-600/20 border-blue-500/50' : 'bg-[var(--surface-soft)] border-[var(--border-subtle)] hover:bg-[var(--surface-hover)]'}`,
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMoon"], {
-                                                        className: "w-5 h-5 text-blue-400"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 95,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-left",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm font-medium text-[var(--text-primary)]",
-                                                                children: "Dark"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 97,
-                                                                columnNumber: 19
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-xs text-[var(--text-muted)]",
-                                                                children: "Easy on the eyes"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 98,
-                                                                columnNumber: 19
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 96,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    draftMode === 'dark' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheck"], {
-                                                        className: "w-4 h-4 text-blue-400 ml-auto"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 100,
-                                                        columnNumber: 42
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 87,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setDraftMode('light'),
-                                                className: `flex items-center gap-3 p-4 rounded-xl border transition-all ${draftMode === 'light' ? 'bg-blue-600/20 border-blue-500/50' : 'bg-[var(--surface-soft)] border-[var(--border-subtle)] hover:bg-[var(--surface-hover)]'}`,
+                                                className: `flex items-center gap-3 p-4 rounded-xl border transition-all ${draftMode === 'light' ? 'bg-indigo-50 border-indigo-300' : 'bg-[var(--surface-soft)] border-[var(--border-subtle)] hover:bg-[var(--surface-hover)]'}`,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiSun"], {
-                                                        className: "w-5 h-5 text-amber-400"
+                                                        className: "w-5 h-5 text-amber-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 92,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1163,7 +1203,7 @@ function DesignView() {
                                                                 children: "Light"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 112,
+                                                                lineNumber: 94,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1171,56 +1211,105 @@ function DesignView() {
                                                                 children: "Bright and clean"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 113,
+                                                                lineNumber: 95,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 111,
+                                                        lineNumber: 93,
                                                         columnNumber: 17
                                                     }, this),
                                                     draftMode === 'light' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheck"], {
-                                                        className: "w-4 h-4 text-blue-400 ml-auto"
+                                                        className: "w-4 h-4 text-indigo-500 ml-auto"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 97,
                                                         columnNumber: 43
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 84,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>setDraftMode('dark'),
+                                                className: `flex items-center gap-3 p-4 rounded-xl border transition-all ${draftMode === 'dark' ? 'bg-indigo-50 border-indigo-300' : 'bg-[var(--surface-soft)] border-[var(--border-subtle)] hover:bg-[var(--surface-hover)]'}`,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMoon"], {
+                                                        className: "w-5 h-5 text-indigo-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
+                                                        lineNumber: 107,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-left",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-sm font-medium text-[var(--text-primary)]",
+                                                                children: "Dark"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
+                                                                lineNumber: 109,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-xs text-[var(--text-muted)]",
+                                                                children: "Easy on the eyes"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
+                                                                lineNumber: 110,
+                                                                columnNumber: 19
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
+                                                        lineNumber: 108,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    draftMode === 'dark' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheck"], {
+                                                        className: "w-4 h-4 text-indigo-500 ml-auto"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
+                                                        lineNumber: 112,
+                                                        columnNumber: 42
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
+                                                lineNumber: 99,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 84,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                                 className: "bg-[var(--surface)] border border-[var(--border-subtle)] rounded-2xl p-5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
                                         children: "Accent color"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 119,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "grid grid-cols-2 sm:grid-cols-3 gap-3",
                                         children: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$app$2f$chat$2f$contexts$2f$ThemeContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ACCENT_PRESETS"].map((preset)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setDraftAccent(preset),
-                                                className: `flex items-center gap-3 p-3 rounded-xl border transition-all ${isPresetActive(preset) ? 'border-white/40 bg-[var(--surface-strong)]' : 'border-[var(--border-subtle)] bg-[var(--surface-soft)] hover:bg-[var(--surface-hover)]'}`,
+                                                className: `flex items-center gap-3 p-3 rounded-xl border transition-all ${isPresetActive(preset) ? 'border-indigo-300 bg-[var(--surface-strong)]' : 'border-[var(--border-subtle)] bg-[var(--surface-soft)] hover:bg-[var(--surface-hover)]'}`,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "w-6 h-6 rounded-full shrink-0",
@@ -1229,7 +1318,7 @@ function DesignView() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 134,
+                                                        lineNumber: 131,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1237,42 +1326,42 @@ function DesignView() {
                                                         children: preset.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 138,
+                                                        lineNumber: 135,
                                                         columnNumber: 19
                                                     }, this),
                                                     isPresetActive(preset) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheck"], {
                                                         className: "w-4 h-4 text-[var(--text-secondary)] shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 139,
+                                                        lineNumber: 136,
                                                         columnNumber: 46
                                                     }, this)
                                                 ]
                                             }, preset.name, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 122,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 120,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 121,
+                                lineNumber: 118,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                                 className: "bg-[var(--surface)] border border-[var(--border-subtle)] rounded-2xl p-5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
                                         children: "Custom gradient"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1285,7 +1374,7 @@ function DesignView() {
                                                         children: "Start"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 147,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1293,12 +1382,12 @@ function DesignView() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "color",
-                                                                value: isValidHex(customFrom) ? customFrom : '#3b82f6',
+                                                                value: isValidHex(customFrom) ? customFrom : '#6366f1',
                                                                 onChange: (e)=>setCustomFrom(e.target.value),
                                                                 className: "w-9 h-9 rounded-lg border border-[var(--border-strong)] bg-transparent cursor-pointer"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 152,
+                                                                lineNumber: 149,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1308,19 +1397,19 @@ function DesignView() {
                                                                 className: "w-24 px-2 py-1.5 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-lg text-xs text-[var(--text-primary)]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 158,
+                                                                lineNumber: 155,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 151,
+                                                        lineNumber: 148,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 149,
+                                                lineNumber: 146,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1330,7 +1419,7 @@ function DesignView() {
                                                         children: "End"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 167,
+                                                        lineNumber: 164,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1338,12 +1427,12 @@ function DesignView() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "color",
-                                                                value: isValidHex(customTo) ? customTo : '#9333ea',
+                                                                value: isValidHex(customTo) ? customTo : '#4f46e5',
                                                                 onChange: (e)=>setCustomTo(e.target.value),
                                                                 className: "w-9 h-9 rounded-lg border border-[var(--border-strong)] bg-transparent cursor-pointer"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 169,
+                                                                lineNumber: 166,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1353,19 +1442,19 @@ function DesignView() {
                                                                 className: "w-24 px-2 py-1.5 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-lg text-xs text-[var(--text-primary)]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                                lineNumber: 175,
+                                                                lineNumber: 172,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 168,
+                                                        lineNumber: 165,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 166,
+                                                lineNumber: 163,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1375,19 +1464,19 @@ function DesignView() {
                                                 children: "Use these colors"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 180,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 148,
+                                        lineNumber: 145,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 146,
+                                lineNumber: 143,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1401,45 +1490,45 @@ function DesignView() {
                                                 className: "w-3.5 h-3.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 198,
+                                                lineNumber: 195,
                                                 columnNumber: 15
                                             }, this),
                                             "Reset to default"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 191,
                                         columnNumber: 13
                                     }, this),
                                     hasChanges && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs text-amber-400",
+                                        className: "text-xs text-amber-600",
                                         children: "You have unapplied changes"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 202,
+                                        lineNumber: 199,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 193,
+                                lineNumber: 190,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                        lineNumber: 82,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bg-[var(--surface)] border border-[var(--border-subtle)] rounded-2xl p-5 h-fit sticky top-0",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
+                                className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4",
                                 children: "Preview"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 209,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1457,7 +1546,7 @@ function DesignView() {
                                         children: "Document Agent"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 211,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1475,12 +1564,12 @@ function DesignView() {
                                                     children: "How can I help you today?"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                    lineNumber: 222,
+                                                    lineNumber: 219,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 221,
+                                                lineNumber: 218,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1493,12 +1582,12 @@ function DesignView() {
                                                     children: "Summarize this contract for me"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                    lineNumber: 234,
+                                                    lineNumber: 231,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 233,
+                                                lineNumber: 230,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1514,7 +1603,7 @@ function DesignView() {
                                                         children: "Message AI Agent..."
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 239,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1526,48 +1615,48 @@ function DesignView() {
                                                             className: "w-3.5 h-3.5 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                            lineNumber: 256,
+                                                            lineNumber: 253,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                        lineNumber: 252,
+                                                        lineNumber: 249,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                                lineNumber: 241,
+                                                lineNumber: 238,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                        lineNumber: 220,
+                                        lineNumber: 217,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                                lineNumber: 210,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                        lineNumber: 208,
+                        lineNumber: 205,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-                lineNumber: 80,
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/chat/views/DesignView.tsx",
-        lineNumber: 52,
+        lineNumber: 49,
         columnNumber: 5
     }, this);
 }
@@ -1583,15 +1672,27 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-icons/fi/index.esm.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$reports$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/lib/api/reports.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/lib/api/client.ts [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
 ;
 ;
+;
+function formatBytes(bytes) {
+    if (bytes === null || bytes === undefined) return '—';
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
 function DocumentDetailsView({ docId, onBack }) {
     const [doc, setDoc] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [deleting, setDeleting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [downloading, setDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [previewUrl, setPreviewUrl] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [previewLoading, setPreviewLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!docId) {
             setLoading(false);
@@ -1618,6 +1719,63 @@ function DocumentDetailsView({ docId, onBack }) {
     }, [
         docId
     ]);
+    // Load the preview blob once we know the doc is a PDF — separate effect
+    // so it only fires after `doc` (and its mime type) is known.
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!docId || !doc) return;
+        const isPdf = doc.mime === 'application/pdf' || doc.title?.toLowerCase().endsWith('.pdf');
+        if (!isPdf) return;
+        let cancelled = false;
+        let objectUrl = null;
+        async function loadPreview() {
+            setPreviewLoading(true);
+            try {
+                const url = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].getDocumentFileBlobUrl(docId);
+                if (cancelled) {
+                    URL.revokeObjectURL(url);
+                    return;
+                }
+                objectUrl = url;
+                setPreviewUrl(url);
+            } catch  {
+                if (!cancelled) setPreviewUrl(null);
+            } finally{
+                if (!cancelled) setPreviewLoading(false);
+            }
+        }
+        loadPreview();
+        return ()=>{
+            cancelled = true;
+            if (objectUrl) URL.revokeObjectURL(objectUrl);
+        };
+    }, [
+        docId,
+        doc
+    ]);
+    async function handleDelete() {
+        if (!docId) return;
+        if (!confirm('Delete this document? This cannot be undone.')) return;
+        setDeleting(true);
+        try {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].deleteDocument(docId);
+            onBack();
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Delete failed');
+            setDeleting(false);
+        }
+    }
+    async function handleDownload() {
+        if (!docId || !doc) return;
+        setDownloading(true);
+        try {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].downloadDocumentFile(docId, doc.title ?? `document_${docId}`);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Download failed');
+        } finally{
+            setDownloading(false);
+        }
+    }
+    const isPdf = doc?.mime === 'application/pdf' || doc?.title?.toLowerCase().endsWith('.pdf');
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex-1 flex flex-col overflow-hidden",
         children: [
@@ -1625,31 +1783,32 @@ function DocumentDetailsView({ docId, onBack }) {
                 className: "border-b border-[var(--border-subtle)] bg-[var(--surface)] backdrop-blur-xl px-6 py-4 flex items-center justify-between",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-4",
+                        className: "flex items-center gap-4 min-w-0",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: onBack,
-                                className: "p-2 hover:bg-[var(--surface-strong)] rounded-lg transition-colors",
+                                className: "p-2 hover:bg-[var(--surface-strong)] rounded-lg transition-colors shrink-0",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiArrowLeft"], {
                                     className: "w-5 h-5 text-[var(--text-secondary)]"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 124,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 49,
+                                lineNumber: 123,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "min-w-0",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                         className: "text-lg font-bold text-[var(--text-primary)] truncate max-w-md",
                                         children: doc?.title ?? (docId ? `Document ${docId}` : 'Document')
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 127,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1660,68 +1819,84 @@ function DocumentDetailsView({ docId, onBack }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 130,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 52,
+                                lineNumber: 126,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                        lineNumber: 48,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-2",
+                        className: "flex items-center gap-2 shrink-0",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "flex items-center gap-2 px-3 py-2 bg-[var(--surface-strong)] hover:bg-[var(--surface-hover-strong)] border border-[var(--border-strong)] rounded-xl text-sm text-[var(--text-secondary)] transition-all",
+                                onClick: handleDownload,
+                                disabled: !docId || downloading,
+                                className: "flex items-center gap-2 px-3 py-2 bg-[var(--surface-strong)] hover:bg-[var(--surface-hover-strong)] border border-[var(--border-strong)] rounded-xl text-sm text-[var(--text-secondary)] transition-all disabled:opacity-50",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiDownload"], {
+                                    downloading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiLoader"], {
+                                        className: "w-4 h-4 animate-spin"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                        lineNumber: 139,
+                                        columnNumber: 28
+                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiDownload"], {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 61,
-                                        columnNumber: 13
+                                        lineNumber: 139,
+                                        columnNumber: 76
                                     }, this),
-                                    "Download"
+                                    downloading ? 'Downloading...' : 'Download'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 60,
+                                lineNumber: 134,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "flex items-center gap-2 px-3 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl text-sm text-red-400 transition-all",
+                                onClick: handleDelete,
+                                disabled: !docId || deleting,
+                                className: "flex items-center gap-2 px-3 py-2 bg-red-50 hover:bg-red-100 border border-red-200 rounded-xl text-sm text-red-600 transition-all disabled:opacity-50",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiTrash2"], {
+                                    deleting ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiLoader"], {
+                                        className: "w-4 h-4 animate-spin"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                        lineNumber: 147,
+                                        columnNumber: 25
+                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiTrash2"], {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 65,
-                                        columnNumber: 13
+                                        lineNumber: 147,
+                                        columnNumber: 73
                                     }, this),
-                                    "Delete"
+                                    deleting ? 'Deleting...' : 'Delete'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 64,
+                                lineNumber: 142,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                        lineNumber: 59,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                lineNumber: 47,
+                lineNumber: 121,
                 columnNumber: 7
             }, this),
             loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1733,7 +1908,7 @@ function DocumentDetailsView({ docId, onBack }) {
                             className: "w-8 h-8 text-[var(--text-muted)] mx-auto mb-3 animate-spin"
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                            lineNumber: 74,
+                            lineNumber: 156,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1741,18 +1916,18 @@ function DocumentDetailsView({ docId, onBack }) {
                             children: "Loading document..."
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                            lineNumber: 75,
+                            lineNumber: 157,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                    lineNumber: 73,
+                    lineNumber: 155,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                lineNumber: 72,
+                lineNumber: 154,
                 columnNumber: 9
             }, this) : error ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex-1 flex items-center justify-center",
@@ -1760,10 +1935,10 @@ function DocumentDetailsView({ docId, onBack }) {
                     className: "text-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiAlertCircle"], {
-                            className: "w-10 h-10 text-red-400 mx-auto mb-3"
+                            className: "w-10 h-10 text-red-500 mx-auto mb-3"
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                            lineNumber: 81,
+                            lineNumber: 163,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1774,51 +1949,79 @@ function DocumentDetailsView({ docId, onBack }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                            lineNumber: 82,
+                            lineNumber: 164,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                    lineNumber: 80,
+                    lineNumber: 162,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                lineNumber: 79,
+                lineNumber: 161,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6",
+                className: "flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fadeIn",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "lg:col-span-2 bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl flex flex-col items-center justify-center min-h-[400px] p-8",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "p-6 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl mb-4",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiFileText"], {
-                                    className: "w-12 h-12 text-blue-400"
+                        className: "lg:col-span-2 bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl overflow-hidden min-h-[400px]",
+                        children: isPdf && previewLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center justify-center h-full min-h-[400px]",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiLoader"], {
+                                className: "w-6 h-6 text-[var(--text-muted)] animate-spin"
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                lineNumber: 173,
+                                columnNumber: 17
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                            lineNumber: 172,
+                            columnNumber: 15
+                        }, this) : isPdf && previewUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                            src: previewUrl,
+                            title: "Document preview",
+                            className: "w-full h-full min-h-[500px] border-0"
+                        }, void 0, false, {
+                            fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                            lineNumber: 176,
+                            columnNumber: 15
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col items-center justify-center h-full min-h-[400px] p-8",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-4",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiFileText"], {
+                                        className: "w-7 h-7 text-indigo-500"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                        lineNumber: 180,
+                                        columnNumber: 19
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                    lineNumber: 90,
-                                    columnNumber: 15
+                                    lineNumber: 179,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[var(--text-secondary)] text-sm text-center",
+                                    children: "Inline preview isn't available for this file type."
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                    lineNumber: 182,
+                                    columnNumber: 17
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 89,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-[var(--text-secondary)] text-sm text-center",
-                                children: "Preview rendering isn't wired up yet — this panel will show the actual document once file storage is connected."
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 92,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                            lineNumber: 178,
+                            columnNumber: 15
+                        }, this)
+                    }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                        lineNumber: 88,
+                        lineNumber: 170,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1828,11 +2031,105 @@ function DocumentDetailsView({ docId, onBack }) {
                                 className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
                                         children: "Details"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 192,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-3 text-sm",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2 text-[var(--text-secondary)]",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCalendar"], {
+                                                        className: "w-4 h-4 shrink-0 text-indigo-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                        lineNumber: 195,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    doc?.created_at ? new Date(doc.created_at).toLocaleDateString() : 'Unknown date'
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                lineNumber: 194,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2 text-[var(--text-secondary)]",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiHardDrive"], {
+                                                        className: "w-4 h-4 shrink-0 text-indigo-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                        lineNumber: 199,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    formatBytes(doc?.size_bytes ?? null)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                lineNumber: 198,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2 text-[var(--text-secondary)]",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiFile"], {
+                                                        className: "w-4 h-4 shrink-0 text-indigo-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                        lineNumber: 203,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    doc?.mime ?? 'Unknown type'
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                lineNumber: 202,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2 text-[var(--text-secondary)]",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiBookOpen"], {
+                                                        className: "w-4 h-4 shrink-0 text-indigo-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                        lineNumber: 207,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    doc?.page_count != null ? `${doc.page_count} page${doc.page_count === 1 ? '' : 's'}` : 'Page count unavailable'
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                                lineNumber: 206,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                        lineNumber: 193,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                lineNumber: 191,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
+                                        children: "Indexing"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
+                                        lineNumber: 214,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1842,10 +2139,10 @@ function DocumentDetailsView({ docId, onBack }) {
                                                 className: "flex items-center gap-2 text-[var(--text-secondary)]",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiHash"], {
-                                                        className: "w-4 h-4 shrink-0"
+                                                        className: "w-4 h-4 shrink-0 text-indigo-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                                        lineNumber: 103,
+                                                        lineNumber: 217,
                                                         columnNumber: 19
                                                     }, this),
                                                     doc?.chunk_count ?? 0,
@@ -1854,17 +2151,17 @@ function DocumentDetailsView({ docId, onBack }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 216,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex items-center gap-2 text-[var(--text-secondary)]",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiAlignLeft"], {
-                                                        className: "w-4 h-4 shrink-0"
+                                                        className: "w-4 h-4 shrink-0 text-indigo-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 221,
                                                         columnNumber: 19
                                                     }, this),
                                                     "~",
@@ -1873,76 +2170,76 @@ function DocumentDetailsView({ docId, onBack }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                                lineNumber: 106,
+                                                lineNumber: 220,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 215,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 99,
+                                lineNumber: 213,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
-                                        children: "Sample Snippets"
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
+                                        children: "Sample snippets"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 228,
                                         columnNumber: 15
                                     }, this),
                                     doc?.sample_snippets && doc.sample_snippets.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "space-y-3",
                                         children: doc.sample_snippets.map((snippet, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-[var(--text-secondary)] leading-relaxed border-l-2 border-[var(--border-subtle)] pl-3",
+                                                className: "text-sm text-[var(--text-secondary)] leading-relaxed border-l-2 border-indigo-200 pl-3",
                                                 children: snippet
                                             }, i, false, {
                                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 232,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 230,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-sm text-[var(--text-muted)]",
                                         children: "No snippets available."
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 238,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                                lineNumber: 113,
+                                lineNumber: 227,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                        lineNumber: 98,
+                        lineNumber: 190,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-                lineNumber: 86,
+                lineNumber: 168,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/chat/views/DocumentDetailsView.tsx",
-        lineNumber: 45,
+        lineNumber: 119,
         columnNumber: 5
     }, this);
 }
@@ -1976,6 +2273,7 @@ function DocumentsListView({ onSelectDoc }) {
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [openMenuId, setOpenMenuId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [uploading, setUploading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [deletingId, setDeletingId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [refreshKey, setRefreshKey] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
     const fileInputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -2023,6 +2321,19 @@ function DocumentsListView({ onSelectDoc }) {
             if (fileInputRef.current) fileInputRef.current.value = '';
         }
     }
+    async function handleDelete(docId) {
+        setOpenMenuId(null);
+        setDeletingId(docId);
+        setError(null);
+        try {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].deleteDocument(docId);
+            setDocuments((prev)=>prev.filter((d)=>d.id !== docId));
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Delete failed');
+        } finally{
+            setDeletingId(null);
+        }
+    }
     const filtered = documents.filter((d)=>d.name.toLowerCase().includes(search.toLowerCase()));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex-1 flex flex-col overflow-hidden",
@@ -2036,7 +2347,7 @@ function DocumentsListView({ onSelectDoc }) {
                         children: "Documents"
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                        lineNumber: 87,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2046,38 +2357,38 @@ function DocumentsListView({ onSelectDoc }) {
                         className: "hidden"
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                        lineNumber: 88,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>fileInputRef.current?.click(),
                         disabled: uploading,
-                        className: "flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm font-medium rounded-xl transition-all shadow-lg shadow-blue-500/30 disabled:opacity-50",
+                        className: "flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-all shadow-sm shadow-indigo-600/20 disabled:opacity-50",
                         children: [
                             uploading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiLoader"], {
                                 className: "w-4 h-4 animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 99,
+                                lineNumber: 114,
                                 columnNumber: 24
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiUpload"], {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 99,
+                                lineNumber: 114,
                                 columnNumber: 72
                             }, this),
                             uploading ? 'Uploading...' : 'Upload document'
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                        lineNumber: 94,
+                        lineNumber: 109,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                lineNumber: 86,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2089,7 +2400,7 @@ function DocumentsListView({ onSelectDoc }) {
                             className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--text-muted)]"
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                            lineNumber: 107,
+                            lineNumber: 122,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2097,22 +2408,30 @@ function DocumentsListView({ onSelectDoc }) {
                             value: search,
                             onChange: (e)=>setSearch(e.target.value),
                             placeholder: "Search documents...",
-                            className: "w-full pl-9 pr-4 py-2.5 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 text-sm"
+                            className: "w-full pl-9 pr-4 py-2.5 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm transition-all"
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                            lineNumber: 108,
+                            lineNumber: 123,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                    lineNumber: 106,
+                    lineNumber: 121,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                lineNumber: 105,
+                lineNumber: 120,
                 columnNumber: 7
+            }, this),
+            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mx-6 mt-4 px-4 py-2 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700 animate-fadeIn",
+                children: error
+            }, void 0, false, {
+                fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
+                lineNumber: 134,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex-1 overflow-y-auto p-6",
@@ -2124,7 +2443,7 @@ function DocumentsListView({ onSelectDoc }) {
                                 className: "w-8 h-8 text-[var(--text-muted)] mx-auto mb-3 animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 123,
+                                lineNumber: 144,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2132,60 +2451,35 @@ function DocumentsListView({ onSelectDoc }) {
                                 children: "Loading documents..."
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 124,
+                                lineNumber: 145,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                        lineNumber: 122,
+                        lineNumber: 143,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                    lineNumber: 121,
-                    columnNumber: 11
-                }, this) : error ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "h-full flex items-center justify-center text-center",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiAlertCircle"], {
-                                className: "w-10 h-10 text-red-400 mx-auto mb-3"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 130,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-[var(--text-secondary)]",
-                                children: [
-                                    "Couldn't load documents: ",
-                                    error
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 131,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                        lineNumber: 129,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                    lineNumber: 128,
+                    lineNumber: 142,
                     columnNumber: 11
                 }, this) : filtered.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "h-full flex items-center justify-center text-center",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiFileText"], {
-                                className: "w-10 h-10 text-[var(--text-muted)] mx-auto mb-3"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-3",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiFileText"], {
+                                    className: "w-5 h-5 text-indigo-500"
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
+                                    lineNumber: 152,
+                                    columnNumber: 17
+                                }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 137,
+                                lineNumber: 151,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2193,37 +2487,37 @@ function DocumentsListView({ onSelectDoc }) {
                                 children: documents.length === 0 ? 'No documents yet' : 'No documents match your search'
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                lineNumber: 138,
+                                lineNumber: 154,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                        lineNumber: 136,
+                        lineNumber: 150,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                    lineNumber: 135,
+                    lineNumber: 149,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "space-y-2",
                     children: filtered.map((doc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             onClick: ()=>onSelectDoc(doc.id),
-                            className: "flex items-center gap-4 p-4 bg-[var(--surface-soft)] hover:bg-[var(--surface-strong)] border border-[var(--border-subtle)] rounded-xl cursor-pointer transition-all duration-200",
+                            className: `flex items-center gap-4 p-4 bg-[var(--surface-soft)] hover:bg-[var(--surface-strong)] border border-[var(--border-subtle)] rounded-xl cursor-pointer transition-all duration-200 ${deletingId === doc.id ? 'opacity-50 pointer-events-none' : ''}`,
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-10 h-10 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg flex items-center justify-center shrink-0",
+                                    className: "w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center shrink-0",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiFileText"], {
-                                        className: "w-5 h-5 text-blue-400"
+                                        className: "w-5 h-5 text-indigo-500"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 168,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                    lineNumber: 151,
+                                    lineNumber: 167,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2234,7 +2528,7 @@ function DocumentsListView({ onSelectDoc }) {
                                             children: doc.name
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                            lineNumber: 155,
+                                            lineNumber: 171,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2245,30 +2539,30 @@ function DocumentsListView({ onSelectDoc }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 172,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 170,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
+                                    className: "flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium text-emerald-700 bg-emerald-50 border-emerald-200",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheckCircle"], {
                                             className: "w-3.5 h-3.5"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                            lineNumber: 161,
+                                            lineNumber: 177,
                                             columnNumber: 19
                                         }, this),
                                         "Indexed"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 176,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2280,21 +2574,27 @@ function DocumentsListView({ onSelectDoc }) {
                                                 setOpenMenuId(openMenuId === doc.id ? null : doc.id);
                                             },
                                             className: "p-2 hover:bg-[var(--surface-strong)] rounded-lg transition-colors",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMoreVertical"], {
+                                            children: deletingId === doc.id ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiLoader"], {
+                                                className: "w-4 h-4 text-[var(--text-muted)] animate-spin"
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
+                                                lineNumber: 189,
+                                                columnNumber: 23
+                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiMoreVertical"], {
                                                 className: "w-4 h-4 text-[var(--text-muted)]"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                                lineNumber: 172,
-                                                columnNumber: 21
+                                                lineNumber: 191,
+                                                columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 181,
                                             columnNumber: 19
                                         }, this),
                                         openMenuId === doc.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             onClick: (e)=>e.stopPropagation(),
-                                            className: "absolute right-0 top-full mt-1 w-40 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-xl shadow-lg z-10 overflow-hidden",
+                                            className: "absolute right-0 top-full mt-1 w-40 bg-[var(--surface-solid)] border border-[var(--border-strong)] rounded-xl shadow-lg shadow-black/[0.08] z-10 overflow-hidden animate-fadeIn",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>{
@@ -2305,53 +2605,50 @@ function DocumentsListView({ onSelectDoc }) {
                                                     children: "View details"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                                    lineNumber: 179,
+                                                    lineNumber: 199,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>{
-                                                        setOpenMenuId(null);
-                                                    // handleDelete(doc.id) — wire once backend delete route exists
-                                                    },
-                                                    className: "w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500/10",
+                                                    onClick: ()=>handleDelete(doc.id),
+                                                    className: "w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50",
                                                     children: "Delete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                                    lineNumber: 188,
+                                                    lineNumber: 208,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 195,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 180,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, doc.id, true, {
                             fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                            lineNumber: 146,
+                            lineNumber: 162,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                    lineNumber: 144,
+                    lineNumber: 160,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-                lineNumber: 119,
+                lineNumber: 140,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/chat/views/DocumentsListView.tsx",
-        lineNumber: 84,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 }
@@ -2405,13 +2702,13 @@ function ProfileView() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 overflow-y-auto p-6 max-w-2xl space-y-6",
+                className: "flex-1 overflow-y-auto p-6 max-w-2xl space-y-6 animate-fadeIn",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-6 flex items-center gap-5",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0",
+                                className: "w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0 shadow-sm shadow-indigo-600/20",
                                 children: name.charAt(0).toUpperCase()
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
@@ -2419,12 +2716,12 @@ function ProfileView() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex-1",
+                                className: "flex-1 min-w-0",
                                 children: [
                                     editing ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         value: name,
                                         onChange: (e)=>setName(e.target.value),
-                                        className: "bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-lg px-3 py-1.5 text-[var(--text-primary)] text-lg font-semibold focus:outline-none focus:border-blue-500"
+                                        className: "bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-lg px-3 py-1.5 text-[var(--text-primary)] text-lg font-semibold focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
                                         lineNumber: 29,
@@ -2504,10 +2801,17 @@ function ProfileView() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         className: "grid grid-cols-2 gap-4",
                         children: stats.map((stat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5 text-center",
+                                className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5 text-center transition-all hover:bg-[var(--surface-strong)]",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(stat.icon, {
-                                        className: "w-5 h-5 text-blue-400 mx-auto mb-2"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-9 h-9 bg-indigo-50 rounded-xl flex items-center justify-center mx-auto mb-2",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(stat.icon, {
+                                            className: "w-4 h-4 text-indigo-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
+                                            lineNumber: 59,
+                                            columnNumber: 17
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
                                         lineNumber: 58,
@@ -2518,7 +2822,7 @@ function ProfileView() {
                                         children: stat.value
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2526,7 +2830,7 @@ function ProfileView() {
                                         children: stat.label
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 62,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -2544,11 +2848,11 @@ function ProfileView() {
                         className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
+                                className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3",
                                 children: "Field of study"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
-                                lineNumber: 66,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2556,13 +2860,13 @@ function ProfileView() {
                                 children: "Business Intelligence — ISG Sousse"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
-                                lineNumber: 67,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/chat/views/ProfileView.tsx",
-                        lineNumber: 65,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this)
                 ]
@@ -2623,9 +2927,9 @@ function ToggleRow({ label, description, checked, onChange }) {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: ()=>onChange(!checked),
-                className: `w-11 h-6 rounded-full transition-colors relative shrink-0 ${checked ? 'bg-blue-600' : 'bg-[var(--surface-strong)]'}`,
+                className: `w-11 h-6 rounded-full transition-colors relative shrink-0 ${checked ? 'bg-indigo-600' : 'bg-[var(--surface-strong)]'}`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: `absolute top-0.5 w-5 h-5 bg-white rounded-full transition-transform ${checked ? 'translate-x-5' : 'translate-x-0.5'}`
+                    className: `absolute top-0.5 w-5 h-5 bg-white rounded-full shadow-sm transition-transform ${checked ? 'translate-x-5' : 'translate-x-0.5'}`
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
                     lineNumber: 24,
@@ -2646,7 +2950,7 @@ function ToggleRow({ label, description, checked, onChange }) {
 function SettingsView() {
     const [emailNotifs, setEmailNotifs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const [processingAlerts, setProcessingAlerts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [autoOcr, setAutoOcr] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex-1 flex flex-col overflow-hidden",
@@ -2667,7 +2971,7 @@ function SettingsView() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 overflow-y-auto p-6 max-w-2xl space-y-6",
+                className: "flex-1 overflow-y-auto p-6 max-w-2xl space-y-6 animate-fadeIn",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         className: "bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5",
@@ -2676,14 +2980,14 @@ function SettingsView() {
                                 className: "flex items-center gap-2 mb-1",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiBell"], {
-                                        className: "w-4 h-4 text-blue-400"
+                                        className: "w-4 h-4 text-indigo-500"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
                                         lineNumber: 49,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
                                         children: "Notifications"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
@@ -2738,14 +3042,14 @@ function SettingsView() {
                                 className: "flex items-center gap-2 mb-1",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiEye"], {
-                                        className: "w-4 h-4 text-blue-400"
+                                        className: "w-4 h-4 text-indigo-500"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
                                         lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
                                         children: "Appearance"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
@@ -2788,14 +3092,14 @@ function SettingsView() {
                                 className: "flex items-center gap-2 mb-1",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCpu"], {
-                                        className: "w-4 h-4 text-blue-400"
+                                        className: "w-4 h-4 text-indigo-500"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
                                         lineNumber: 85,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
                                         children: "Document pipeline"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
@@ -2838,14 +3142,14 @@ function SettingsView() {
                                 className: "flex items-center gap-2 mb-3",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiKey"], {
-                                        className: "w-4 h-4 text-blue-400"
+                                        className: "w-4 h-4 text-indigo-500"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
                                         lineNumber: 100,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
                                         children: "API access"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/SettingsView.tsx",
@@ -2962,15 +3266,15 @@ function UpgradeView() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 overflow-y-auto p-6",
+                className: "flex-1 overflow-y-auto p-6 animate-fadeIn",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-center mb-8",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "inline-block p-3 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl mb-3",
+                                className: "inline-flex items-center justify-center w-12 h-12 bg-indigo-50 rounded-2xl mb-3",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiZap"], {
-                                    className: "w-6 h-6 text-blue-400"
+                                    className: "w-5 h-5 text-indigo-500"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/chat/views/UpgradeView.tsx",
                                     lineNumber: 45,
@@ -3006,10 +3310,10 @@ function UpgradeView() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto",
                         children: PLANS.map((plan)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: `relative rounded-2xl p-6 border transition-all ${plan.highlight ? 'bg-gradient-to-b from-blue-600/20 to-purple-600/10 border-blue-500/50 shadow-lg shadow-blue-500/20' : 'bg-[var(--surface-soft)] border-[var(--border-subtle)]'}`,
+                                className: `relative rounded-2xl p-6 border transition-all ${plan.highlight ? 'bg-indigo-50/60 border-indigo-300 shadow-lg shadow-indigo-600/10' : 'bg-[var(--surface-soft)] border-[var(--border-subtle)]'}`,
                                 children: [
                                     plan.highlight && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold rounded-full",
+                                        className: "absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full shadow-sm shadow-indigo-600/30",
                                         children: "Most popular"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/UpgradeView.tsx",
@@ -3017,7 +3321,7 @@ function UpgradeView() {
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
+                                        className: "text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide",
                                         children: plan.name
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/UpgradeView.tsx",
@@ -3055,7 +3359,7 @@ function UpgradeView() {
                                                 className: "flex items-start gap-2 text-sm text-[var(--text-secondary)]",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiCheck"], {
-                                                        className: "w-4 h-4 text-emerald-400 mt-0.5 shrink-0"
+                                                        className: "w-4 h-4 text-emerald-500 mt-0.5 shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/chat/views/UpgradeView.tsx",
                                                         lineNumber: 74,
@@ -3074,7 +3378,7 @@ function UpgradeView() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: `w-full py-2.5 rounded-xl text-sm font-medium transition-all ${plan.highlight ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-blue-500/30' : 'bg-[var(--surface-strong)] hover:bg-[var(--surface-hover-strong)] border border-[var(--border-strong)] text-[var(--text-primary)]'}`,
+                                        className: `w-full py-2.5 rounded-xl text-sm font-medium transition-all ${plan.highlight ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-600/20' : 'bg-[var(--surface-strong)] hover:bg-[var(--surface-hover-strong)] border border-[var(--border-strong)] text-[var(--text-primary)]'}`,
                                         children: plan.name === 'Free' ? 'Current plan' : `Choose ${plan.name}`
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/chat/views/UpgradeView.tsx",
@@ -3151,6 +3455,38 @@ class APIClient {
         if (!res.ok) throw new Error('Signup failed');
         return res.json();
     }
+    async verifyEmail(email, code) {
+        const res = await fetch(`${this.baseURL}/api/auth/verify-email`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                code
+            })
+        });
+        if (!res.ok) {
+            const data = await res.json().catch(()=>null);
+            throw new Error(data?.detail || 'Verification failed');
+        }
+        const data = await res.json();
+        localStorage.setItem('auth_token', data.access_token);
+        return data;
+    }
+    async resendVerification(email) {
+        const res = await fetch(`${this.baseURL}/api/auth/resend-verification`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email
+            })
+        });
+        if (!res.ok) throw new Error('Failed to resend link');
+        return res.json();
+    }
     async signin(email, password) {
         const res = await fetch(`${this.baseURL}/api/auth/signin`, {
             method: 'POST',
@@ -3166,6 +3502,37 @@ class APIClient {
         const data = await res.json();
         localStorage.setItem('auth_token', data.access_token);
         return data;
+    }
+    async forgotPassword(email) {
+        const res = await fetch(`${this.baseURL}/api/auth/forgot-password`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email
+            })
+        });
+        if (!res.ok) throw new Error('Request failed');
+        return res.json();
+    }
+    async resetPassword(email, code, newPassword) {
+        const res = await fetch(`${this.baseURL}/api/auth/reset-password`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                code,
+                new_password: newPassword
+            })
+        });
+        if (!res.ok) {
+            const data = await res.json().catch(()=>null);
+            throw new Error(data?.detail || 'Reset failed');
+        }
+        return res.json();
     }
     async createNewChat() {
         const res = await fetch(`${this.baseURL}/api/chats/new`, {
@@ -3232,6 +3599,34 @@ class APIClient {
         });
         if (!res.ok) throw new Error('Upload failed');
         return res.json();
+    }
+    async deleteDocument(documentId) {
+        const res = await fetch(`${this.baseURL}/ingest/${documentId}`, {
+            method: 'DELETE',
+            headers: this.getAuthHeader()
+        });
+        if (!res.ok) throw new Error('Delete failed');
+        return res.json();
+    }
+    async getDocumentFileBlobUrl(documentId) {
+        const res = await fetch(`${this.baseURL}/ingest/${documentId}/file`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
+            }
+        });
+        if (!res.ok) throw new Error('Failed to load file');
+        const blob = await res.blob();
+        return URL.createObjectURL(blob);
+    }
+    async downloadDocumentFile(documentId, filename) {
+        const url = await this.getDocumentFileBlobUrl(documentId);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(()=>URL.revokeObjectURL(url), 1000);
     }
     async logout() {
         localStorage.removeItem('auth_token');

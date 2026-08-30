@@ -48,7 +48,7 @@ export default function ProjectsView() {
         <button
           onClick={handleNewProject}
           disabled={creating}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 text-white text-sm font-medium rounded-xl transition-all shadow-lg shadow-blue-500/30"
+          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white text-sm font-medium rounded-xl transition-all shadow-sm shadow-indigo-600/20"
         >
           {creating ? <FiLoader className="w-4 h-4 animate-spin" /> : <FiPlus className="w-4 h-4" />}
           New project
@@ -66,26 +66,28 @@ export default function ProjectsView() {
         ) : error ? (
           <div className="h-full flex items-center justify-center text-center">
             <div>
-              <FiAlertCircle className="w-10 h-10 text-red-400 mx-auto mb-3" />
+              <FiAlertCircle className="w-10 h-10 text-red-500 mx-auto mb-3" />
               <p className="text-[var(--text-secondary)]">Couldn't load projects: {error}</p>
             </div>
           </div>
         ) : projects.length === 0 ? (
           <div className="h-full flex items-center justify-center text-center">
             <div>
-              <FiFolder className="w-10 h-10 text-[var(--text-muted)] mx-auto mb-3" />
+              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <FiFolder className="w-5 h-5 text-indigo-500" />
+              </div>
               <p className="text-[var(--text-secondary)]">No projects yet — create one to get started</p>
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 animate-fadeIn">
             {projects.map(project => (
               <div
                 key={project.id}
-                className="bg-[var(--surface-soft)] hover:bg-[var(--surface-strong)] border border-[var(--border-subtle)] rounded-2xl p-5 cursor-pointer transition-all duration-200"
+                className="bg-[var(--surface-soft)] hover:bg-[var(--surface-strong)] border border-[var(--border-subtle)] rounded-2xl p-5 cursor-pointer transition-all duration-200 hover:shadow-md hover:shadow-black/[0.04] hover:-translate-y-0.5"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-10 h-10 bg-gradient-to-br ${project.color ?? 'from-blue-500 to-purple-600'} rounded-xl flex items-center justify-center`}>
+                  <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-sm shadow-indigo-600/20">
                     <FiFolder className="w-5 h-5 text-white" />
                   </div>
                   <button onClick={e => e.stopPropagation()} className="p-1.5 hover:bg-[var(--surface-strong)] rounded-lg transition-colors">

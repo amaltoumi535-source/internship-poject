@@ -19,17 +19,17 @@ export default function ProfileView() {
         <h1 className="text-xl font-bold text-[var(--text-primary)]">Profile</h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-6 max-w-2xl space-y-6">
+      <div className="flex-1 overflow-y-auto p-6 max-w-2xl space-y-6 animate-fadeIn">
         <section className="bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-6 flex items-center gap-5">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0">
+          <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0 shadow-sm shadow-indigo-600/20">
             {name.charAt(0).toUpperCase()}
           </div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             {editing ? (
               <input
                 value={name}
                 onChange={e => setName(e.target.value)}
-                className="bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-lg px-3 py-1.5 text-[var(--text-primary)] text-lg font-semibold focus:outline-none focus:border-blue-500"
+                className="bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-lg px-3 py-1.5 text-[var(--text-primary)] text-lg font-semibold focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
               />
             ) : (
               <h2 className="text-lg font-semibold text-[var(--text-primary)]">{name}</h2>
@@ -54,8 +54,10 @@ export default function ProfileView() {
 
         <section className="grid grid-cols-2 gap-4">
           {stats.map(stat => (
-            <div key={stat.label} className="bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5 text-center">
-              <stat.icon className="w-5 h-5 text-blue-400 mx-auto mb-2" />
+            <div key={stat.label} className="bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5 text-center transition-all hover:bg-[var(--surface-strong)]">
+              <div className="w-9 h-9 bg-indigo-50 rounded-xl flex items-center justify-center mx-auto mb-2">
+                <stat.icon className="w-4 h-4 text-indigo-500" />
+              </div>
               <p className="text-2xl font-bold text-[var(--text-primary)]">{stat.value}</p>
               <p className="text-xs text-[var(--text-muted)] mt-1">{stat.label}</p>
             </div>
@@ -63,7 +65,7 @@ export default function ProfileView() {
         </section>
 
         <section className="bg-[var(--surface-soft)] border border-[var(--border-subtle)] rounded-2xl p-5">
-          <h3 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3">Field of study</h3>
+          <h3 className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-3">Field of study</h3>
           <p className="text-sm text-[var(--text-secondary)]">Business Intelligence — ISG Sousse</p>
         </section>
       </div>

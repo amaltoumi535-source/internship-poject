@@ -27,6 +27,11 @@ class Settings(BaseSettings):
 
     # Auth
     secret_key: str = "amal-itgate-super-secret-key-change-in-prod"
+    jwt_expiration_minutes: int = 30
+    cors_origins: str = "http://localhost:3000,http://localhost:3001"
+    
+    # Database
+    database_url: str = "sqlite:///./app.db"
     
     # Local paths and tools
     data_dir: str = "data"
@@ -41,11 +46,34 @@ class Settings(BaseSettings):
 
     # LLM provider and models
     llm_provider: str = "anthropic"
-    anthropic_model: str = "claude-sonnet"
+    anthropic_api_key: Optional[str] = None
+    anthropic_model: str = "claude-opus"
+    
+    openai_api_key: Optional[str] = None
+    openai_model: str = "gpt-4-turbo-preview"
+    
+    groq_api_key: Optional[str] = None
+    groq_model: str = "mixtral-8x7b-32768"
 
     # Ollama settings (local server)
     ollama_url: Optional[str] = "http://localhost:11434"
     ollama_model: Optional[str] = None
+    
+    # Email settings
+    smtp_server: str = "smtp.gmail.com"
+    smtp_port: int = 587
+    smtp_username: Optional[str] = None
+    smtp_password: Optional[str] = None
+    email_from: str = "noreply@itgate-agent.com"
+    
+    # Rate limiting
+    rate_limit_rpm: int = 60
+    max_documents_per_user: int = 1000
+    max_file_size_mb: int = 50
+    
+    # Slack
+    slack_bot_token: Optional[str] = None
+    slack_signing_secret: Optional[str] = None
 
     # Tell pydantic-settings to read the .env file and allow extra env inputs
     model_config = {

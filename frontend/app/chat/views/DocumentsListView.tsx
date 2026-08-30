@@ -28,6 +28,7 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
   const [error, setError] = useState<string | null>(null)
   const [openMenuId, setOpenMenuId] = useState<string | null>(null)
   const [uploading, setUploading] = useState(false)
+  const [deletingId, setDeletingId] = useState<string | null>(null)
   const [refreshKey, setRefreshKey] = useState(0)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -78,6 +79,20 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
     }
   }
 
+  async function handleDelete(docId: string) {
+    setOpenMenuId(null)
+    setDeletingId(docId)
+    setError(null)
+    try {
+      await apiClient.deleteDocument(docId)
+      setDocuments(prev => prev.filter(d => d.id !== docId))
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Delete failed')
+    } finally {
+      setDeletingId(null)
+    }
+  }
+
   const filtered = documents.filter(d => d.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
@@ -94,7 +109,7 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
         <button
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm font-medium rounded-xl transition-all shadow-lg shadow-blue-500/30 disabled:opacity-50"
+          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-all shadow-sm shadow-indigo-600/20 disabled:opacity-50"
         >
           {uploading ? <FiLoader className="w-4 h-4 animate-spin" /> : <FiUpload className="w-4 h-4" />}
           {uploading ? 'Uploading...' : 'Upload document'}
@@ -110,10 +125,16 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search documents..."
-            className="w-full pl-9 pr-4 py-2.5 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 text-sm"
+            className="w-full pl-9 pr-4 py-2.5 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm transition-all"
           />
         </div>
       </div>
+
+      {error && (
+        <div className="mx-6 mt-4 px-4 py-2 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700 animate-fadeIn">
+          {error}
+        </div>
+      )}
 
       {/* List */}
       <div className="flex-1 overflow-y-auto p-6">
@@ -124,17 +145,12 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
               <p className="text-[var(--text-secondary)]">Loading documents...</p>
             </div>
           </div>
-        ) : error ? (
-          <div className="h-full flex items-center justify-center text-center">
-            <div>
-              <FiAlertCircle className="w-10 h-10 text-red-400 mx-auto mb-3" />
-              <p className="text-[var(--text-secondary)]">Couldn't load documents: {error}</p>
-            </div>
-          </div>
         ) : filtered.length === 0 ? (
           <div className="h-full flex items-center justify-center text-center">
             <div>
-              <FiFileText className="w-10 h-10 text-[var(--text-muted)] mx-auto mb-3" />
+              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <FiFileText className="w-5 h-5 text-indigo-500" />
+              </div>
               <p className="text-[var(--text-secondary)]">
                 {documents.length === 0 ? 'No documents yet' : 'No documents match your search'}
               </p>
@@ -146,10 +162,10 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
               <div
                 key={doc.id}
                 onClick={() => onSelectDoc(doc.id)}
-                className="flex items-center gap-4 p-4 bg-[var(--surface-soft)] hover:bg-[var(--surface-strong)] border border-[var(--border-subtle)] rounded-xl cursor-pointer transition-all duration-200"
+                className={`flex items-center gap-4 p-4 bg-[var(--surface-soft)] hover:bg-[var(--surface-strong)] border border-[var(--border-subtle)] rounded-xl cursor-pointer transition-all duration-200 ${deletingId === doc.id ? 'opacity-50 pointer-events-none' : ''}`}
               >
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg flex items-center justify-center shrink-0">
-                  <FiFileText className="w-5 h-5 text-blue-400" />
+                <div className="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center shrink-0">
+                  <FiFileText className="w-5 h-5 text-indigo-500" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-[var(--text-primary)] truncate">{doc.name}</p>
@@ -157,7 +173,7 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
                     {doc.type}{doc.uploadedAt ? ` · ${doc.uploadedAt.toLocaleDateString()}` : ''}
                   </p>
                 </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium text-emerald-400 bg-emerald-500/10 border-emerald-500/30">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium text-emerald-700 bg-emerald-50 border-emerald-200">
                   <FiCheckCircle className="w-3.5 h-3.5" />
                   Indexed
                 </div>
@@ -169,12 +185,16 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
                     }}
                     className="p-2 hover:bg-[var(--surface-strong)] rounded-lg transition-colors"
                   >
-                    <FiMoreVertical className="w-4 h-4 text-[var(--text-muted)]" />
+                    {deletingId === doc.id ? (
+                      <FiLoader className="w-4 h-4 text-[var(--text-muted)] animate-spin" />
+                    ) : (
+                      <FiMoreVertical className="w-4 h-4 text-[var(--text-muted)]" />
+                    )}
                   </button>
                   {openMenuId === doc.id && (
                     <div
                       onClick={e => e.stopPropagation()}
-                      className="absolute right-0 top-full mt-1 w-40 bg-[var(--surface-strong)] border border-[var(--border-strong)] rounded-xl shadow-lg z-10 overflow-hidden"
+                      className="absolute right-0 top-full mt-1 w-40 bg-[var(--surface-solid)] border border-[var(--border-strong)] rounded-xl shadow-lg shadow-black/[0.08] z-10 overflow-hidden animate-fadeIn"
                     >
                       <button
                         onClick={() => {
@@ -186,11 +206,8 @@ export default function DocumentsListView({ onSelectDoc }: DocumentsListViewProp
                         View details
                       </button>
                       <button
-                        onClick={() => {
-                          setOpenMenuId(null)
-                          // handleDelete(doc.id) — wire once backend delete route exists
-                        }}
-                        className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500/10"
+                        onClick={() => handleDelete(doc.id)}
+                        className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
                       >
                         Delete
                       </button>

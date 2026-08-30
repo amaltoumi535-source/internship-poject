@@ -14,6 +14,10 @@ class ReportOverview(BaseModel):
 class DocReport(BaseModel):
     document_id: int
     title: Optional[str] = None
+    created_at: Optional[datetime] = None
+    size_bytes: Optional[int] = None
+    mime: Optional[str] = None
+    page_count: Optional[int] = None
     chunk_count: int
     avg_chunk_length: float
     sample_snippets: List[str] = []

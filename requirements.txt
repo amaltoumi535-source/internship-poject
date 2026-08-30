@@ -1,24 +1,66 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
-alembic
-pydantic-settings
+# Core FastAPI stack
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.2
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+pandas
+# Database & ORM
+sqlalchemy==2.0.23
+alembic==1.13.0
+psycopg2-binary==2.9.9
 
-langchain
-langchain-community
-langchain-chroma
-langchain-huggingface
-langchain-text-splitters
-langchain-openai
-langchain-groq
+# LLM & AI
+langchain==0.1.5
+langchain-community==0.0.10
+langchain-chroma==0.1.0
+langchain-huggingface==0.0.6
+langchain-text-splitters==0.0.1
+langchain-openai==0.0.7
+langchain-groq==0.0.1
+langchain-anthropic==0.1.5
 
-sentence-transformers
-pymupdf
-python-docx
-python-multipart
-pytesseract
-pillow
+# Embeddings & Vector stores
+sentence-transformers==2.2.2
+chromadb==0.4.21
 
-langdetect
-textstat
-spacyslack_bolt
+# Document Processing
+pymupdf==1.23.8
+python-docx==0.8.11
+reportlab==4.0.9
+openpyxl>=3.1.5
+pytesseract==0.3.10
+pillow==10.1.0
+pdf2image==1.16.3
+
+# NLP & Text Processing
+langdetect==1.0.9
+textstat==0.7.3
+spacy==3.7.2
+
+# Slack Integration
+slack-bolt==1.18.0
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+PyJWT==2.8.1
+bcrypt==4.1.1
+
+# HTTP & API
+httpx==0.25.2
+requests==2.31.0
+
+# Utilities
+python-dotenv==1.0.0
+python-dateutil==2.8.2
+
+# Logging & Monitoring
+python-json-logger==2.0.7
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.23.1
+black==23.12.1
+flake8==6.1.0
+mypy==1.7.1

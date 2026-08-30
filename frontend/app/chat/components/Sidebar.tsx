@@ -53,11 +53,11 @@ export default function Sidebar({ activeView, onViewChange, onLogout, collapsed 
     >
       {/* Brand + collapse toggle */}
       <div className="p-4 border-b border-[var(--border-subtle)] flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-sm shadow-indigo-600/20">
             <FiZap className="w-4 h-4 text-white" />
           </div>
-          <h2 className="text-lg font-bold text-[var(--text-primary)]">Document Agent</h2>
+          <h2 className="text-[15px] font-bold text-[var(--text-primary)]">Document Agent</h2>
         </div>
         {onCollapse && (
           <button
@@ -78,7 +78,7 @@ export default function Sidebar({ activeView, onViewChange, onLogout, collapsed 
             onClick={() => onViewChange(view)}
             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
               isActive(view, activeView)
-                ? 'bg-blue-600/30 border border-blue-500/50 text-[var(--text-primary)] backdrop-blur'
+                ? 'bg-indigo-50 border border-indigo-200 text-indigo-700'
                 : 'text-[var(--text-secondary)] hover:bg-[var(--surface-soft)] hover:text-[var(--text-primary)] border border-transparent'
             }`}
           >
@@ -94,8 +94,8 @@ export default function Sidebar({ activeView, onViewChange, onLogout, collapsed 
           onClick={() => onViewChange('upgrade')}
           className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
             activeView === 'upgrade'
-              ? 'bg-purple-600/30 border border-purple-500/50 text-[var(--text-primary)]'
-              : 'bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:from-blue-600/20 hover:to-purple-600/20'
+              ? 'bg-indigo-50 border border-indigo-200 text-indigo-700'
+              : 'bg-gradient-to-r from-indigo-50/60 to-amber-50/40 border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:from-indigo-50 hover:to-amber-50'
           }`}
         >
           <FiZap className="w-4 h-4" />
@@ -109,18 +109,18 @@ export default function Sidebar({ activeView, onViewChange, onLogout, collapsed 
           onClick={() => setShowProfileMenu(!showProfileMenu)}
           className="w-full flex items-center gap-3 p-2 hover:bg-[var(--surface-strong)] rounded-lg transition-colors"
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+          <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-semibold text-sm shrink-0">
             A
           </div>
-          <div className="flex-1 text-left">
-            <p className="text-sm font-medium text-[var(--text-primary)]">Amal</p>
-            <p className="text-xs text-[var(--text-muted)]">amal@example.com</p>
+          <div className="flex-1 text-left min-w-0">
+            <p className="text-sm font-medium text-[var(--text-primary)] truncate">Amal</p>
+            <p className="text-xs text-[var(--text-muted)] truncate">amal@example.com</p>
           </div>
-          <FiMoreVertical className="w-4 h-4 text-[var(--text-muted)]" />
+          <FiMoreVertical className="w-4 h-4 text-[var(--text-muted)] shrink-0" />
         </button>
 
         {showProfileMenu && (
-          <div className="absolute bottom-16 left-2 right-2 bg-[var(--surface-solid)] backdrop-blur-xl border border-[var(--border-subtle)] rounded-lg shadow-xl z-50">
+          <div className="absolute bottom-16 left-2 right-2 bg-[var(--surface-solid)] backdrop-blur-xl border border-[var(--border-subtle)] rounded-xl shadow-lg shadow-black/[0.06] z-50 overflow-hidden animate-fadeIn">
             <button
               onClick={() => {
                 onViewChange('profile')
@@ -149,15 +149,15 @@ export default function Sidebar({ activeView, onViewChange, onLogout, collapsed 
               className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-[var(--surface-strong)] text-sm text-[var(--text-secondary)] transition-colors text-left"
             >
               <FiZap className="w-4 h-4" />
-              Billing & Plans
+              Billing and plans
             </button>
             <hr className="my-1 border-[var(--border-subtle)]" />
             <button
               onClick={onLogout}
-              className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-red-500/20 text-sm text-red-400 transition-colors text-left rounded-b-lg"
+              className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 text-sm text-red-600 transition-colors text-left"
             >
               <FiLogOut className="w-4 h-4" />
-              Logout
+              Log out
             </button>
           </div>
         )}

@@ -1,11 +1,15 @@
-﻿from fastapi import APIRouter, UploadFile, File, Form, HTTPException
+﻿from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends
 from fastapi.responses import JSONResponse, FileResponse
+from sqlalchemy.orm import Session
 import logging
 
 from app.modules.ingestion.service import IngestionService
 from app.modules.ingestion.schemas import IngestResponse, ExtractionResult, ExtractionMetadata, PageModel, ChunkModel
 from app.modules.storage.repository import StorageRepository
 from app.modules.search.indexing import index_document
+from app.modules.auth.dependencies import get_current_user_id
+from app.modules.auth.models import UserDocument
+from app.db import get_db
 
 logger = logging.getLogger(__name__)
 
@@ -14,8 +18,20 @@ service = IngestionService()
 repo = StorageRepository()
 
 
+def _user_owns_document(db: Session, document_id: int, user_id: str) -> bool:
+    return db.query(UserDocument).filter(
+        UserDocument.document_id == document_id,
+        UserDocument.user_id == user_id,
+    ).first() is not None
+
+
 @router.post("/", response_model=IngestResponse)
-async def ingest_file(file: UploadFile = File(...), lang: str = Form("multi")):
+async def ingest_file(
+    file: UploadFile = File(...),
+    lang: str = Form("multi"),
+    user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+):
     try:
         result = service.ingest(file, lang=lang)
     except Exception as e:
@@ -32,8 +48,13 @@ async def ingest_file(file: UploadFile = File(...), lang: str = Form("multi")):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Ingestion OK mais storage a échoué: {e}")
 
+    # Link this document to the uploading user
+    ownership = UserDocument(user_id=user_id, document_id=document_id)
+    db.add(ownership)
+    db.commit()
+
     try:
-        index_document(document_id)
+        index_document(document_id, user_id=user_id)
     except Exception as e:
         logger.warning("Semantic indexing failed for document %d: %s", document_id, e)
 
@@ -49,16 +70,37 @@ async def ingest_file(file: UploadFile = File(...), lang: str = Form("multi")):
 
 
 @router.delete("/{document_id}")
-async def delete_ingested_document(document_id: int):
+async def delete_ingested_document(
+    document_id: int,
+    user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+):
+    if not _user_owns_document(db, document_id, user_id):
+        raise HTTPException(status_code=404, detail="Document not found")
+
     deleted = repo.delete_document(document_id)
     if not deleted:
         raise HTTPException(status_code=404, detail="Document not found")
+
+    db.query(UserDocument).filter(
+        UserDocument.document_id == document_id,
+        UserDocument.user_id == user_id,
+    ).delete()
+    db.commit()
+
     return {"deleted": True, "document_id": document_id}
 
 
 @router.get("/{document_id}/file")
-async def get_document_file(document_id: int):
+async def get_document_file(
+    document_id: int,
+    user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+):
+    if not _user_owns_document(db, document_id, user_id):
+        raise HTTPException(status_code=404, detail="File not found")
+
     doc = repo.get_document(document_id)
     if not doc or not doc.stored_path:
         raise HTTPException(status_code=404, detail="File not found")
-    return FileResponse(doc.stored_path, filename=doc.filename)
+    return FileResponse(doc.stored_path, filename=doc.filename, content_disposition_type="inline")

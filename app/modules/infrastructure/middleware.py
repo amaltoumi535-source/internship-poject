@@ -1,64 +1,83 @@
+# app/modules/infrastructure/middleware.py
 """
-FastAPI middleware utilities:
-- RequestIDMiddleware: attach a request id (X-Request-ID)
-- LoggingMiddleware: log basic request/response info
-- register_exception_handlers(app): register handler that converts BaseAppException -> JSONResponse
+Middleware for request tracking, logging, and exception handling.
 """
 
-import time
 import uuid
+from datetime import datetime
 from typing import Callable
-from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
-from starlette.requests import Request
-from starlette.responses import Response, JSONResponse
-from fastapi import FastAPI
-from .exceptions import BaseAppException
-from .logger import get_logger
+
+from fastapi import Request, status
+from fastapi.responses import JSONResponse
+from starlette.middleware.base import BaseHTTPMiddleware
+
+from app.modules.infrastructure.logger import get_logger
 
 logger = get_logger(__name__)
 
 
 class RequestIDMiddleware(BaseHTTPMiddleware):
-    """
-    Add an X-Request-ID header (and request.state.request_id) to each request.
-    """
-    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
-        request_id = request.headers.get("X-Request-ID") or str(uuid.uuid4())
-        request.state.request_id = request_id
-        response: Response = await call_next(request)
-        # ensure header in response
-        response.headers.setdefault("X-Request-ID", request_id)
+    """Add unique request ID to each request for tracing."""
+
+    async def dispatch(self, request: Request, call_next: Callable):
+        request.state.request_id = str(uuid.uuid4())
+        response = await call_next(request)
+        response.headers["X-Request-ID"] = request.state.request_id
         return response
 
 
 class LoggingMiddleware(BaseHTTPMiddleware):
-    """
-    Log start/end of requests with duration and status code.
-    """
-    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
-        start = time.time()
-        try:
-            logger.info("started request", extra={"method": request.method, "path": request.url.path})
-            response: Response = await call_next(request)
-            duration_ms = int((time.time() - start) * 1000)
-            logger.info(
-                "completed request",
-                extra={"method": request.method, "path": request.url.path, "status_code": response.status_code, "duration_ms": duration_ms}
-            )
-            return response
-        except Exception as exc:
-            duration_ms = int((time.time() - start) * 1000)
-            logger.exception("unhandled exception in request", exc_info=exc)
-            # Re-raise; let registered exception handlers format this
-            raise
+    """Log incoming requests and outgoing responses."""
+
+    async def dispatch(self, request: Request, call_next: Callable):
+        request_id = getattr(request.state, "request_id", "unknown")
+        start_time = datetime.utcnow()
+        
+        logger.info(
+            f"[{request_id}] {request.method} {request.url.path}",
+            extra={"request_id": request_id},
+        )
+
+        response = await call_next(request)
+        
+        process_time = (datetime.utcnow() - start_time).total_seconds()
+        logger.info(
+            f"[{request_id}] {request.method} {request.url.path} - {response.status_code} ({process_time:.3f}s)",
+            extra={"request_id": request_id, "status_code": response.status_code},
+        )
+
+        return response
 
 
-def register_exception_handlers(app: FastAPI) -> None:
-    """
-    Register handler for BaseAppException to convert to JSONResponse.
-    Call this during app startup after creating FastAPI app.
-    """
-    @app.exception_handler(BaseAppException)
-    async def base_app_exception_handler(request: Request, exc: BaseAppException) -> JSONResponse:
-        payload = exc.to_dict() if hasattr(exc, "to_dict") else {"detail": str(exc)}
-        return JSONResponse(status_code=exc.status_code, content=payload)
+def register_exception_handlers(app):
+    """Register global exception handlers."""
+
+    @app.exception_handler(Exception)
+    async def general_exception_handler(request: Request, exc: Exception):
+        request_id = getattr(request.state, "request_id", "unknown")
+        logger.exception(
+            f"[{request_id}] Unhandled exception",
+            extra={"request_id": request_id},
+        )
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={
+                "detail": "Internal server error",
+                "request_id": request_id,
+            },
+        )
+
+    @app.exception_handler(ValueError)
+    async def value_error_handler(request: Request, exc: ValueError):
+        request_id = getattr(request.state, "request_id", "unknown")
+        logger.warning(
+            f"[{request_id}] Validation error: {str(exc)}",
+            extra={"request_id": request_id},
+        )
+        return JSONResponse(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            content={
+                "detail": str(exc),
+                "request_id": request_id,
+            },
+        )

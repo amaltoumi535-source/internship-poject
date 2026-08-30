@@ -15,7 +15,7 @@ export class APIClient {
       'Content-Type': 'application/json',
     }
   }
-  
+
   async get<T>(path: string): Promise<T> {
     const res = await fetch(`${this.baseURL}${path}`, {
       headers: this.getAuthHeader(),
@@ -34,6 +34,31 @@ export class APIClient {
     return res.json()
   }
 
+  async verifyEmail(email: string, code: string) {
+    const res = await fetch(`${this.baseURL}/api/auth/verify-email`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, code }),
+    })
+    if (!res.ok) {
+      const data = await res.json().catch(() => null)
+      throw new Error(data?.detail || 'Verification failed')
+    }
+    const data = await res.json()
+    localStorage.setItem('auth_token', data.access_token)
+    return data
+  }
+
+  async resendVerification(email: string) {
+    const res = await fetch(`${this.baseURL}/api/auth/resend-verification`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    })
+    if (!res.ok) throw new Error('Failed to resend link')
+    return res.json()
+  }
+
   async signin(email: string, password: string) {
     const res = await fetch(`${this.baseURL}/api/auth/signin`, {
       method: 'POST',
@@ -44,6 +69,29 @@ export class APIClient {
     const data = await res.json()
     localStorage.setItem('auth_token', data.access_token)
     return data
+  }
+
+  async forgotPassword(email: string) {
+    const res = await fetch(`${this.baseURL}/api/auth/forgot-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    })
+    if (!res.ok) throw new Error('Request failed')
+    return res.json()
+  }
+
+  async resetPassword(email: string, code: string, newPassword: string) {
+    const res = await fetch(`${this.baseURL}/api/auth/reset-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, code, new_password: newPassword }),
+    })
+    if (!res.ok) {
+      const data = await res.json().catch(() => null)
+      throw new Error(data?.detail || 'Reset failed')
+    }
+    return res.json()
   }
 
   async createNewChat() {
@@ -110,6 +158,35 @@ export class APIClient {
     })
     if (!res.ok) throw new Error('Upload failed')
     return res.json()
+  }
+
+  async deleteDocument(documentId: string | number) {
+    const res = await fetch(`${this.baseURL}/ingest/${documentId}`, {
+      method: 'DELETE',
+      headers: this.getAuthHeader(),
+    })
+    if (!res.ok) throw new Error('Delete failed')
+    return res.json()
+  }
+
+  async getDocumentFileBlobUrl(documentId: string | number): Promise<string> {
+    const res = await fetch(`${this.baseURL}/ingest/${documentId}/file`, {
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('auth_token')}` },
+    })
+    if (!res.ok) throw new Error('Failed to load file')
+    const blob = await res.blob()
+    return URL.createObjectURL(blob)
+  }
+
+  async downloadDocumentFile(documentId: string | number, filename: string) {
+    const url = await this.getDocumentFileBlobUrl(documentId)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = filename
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
   }
 
   async logout() {

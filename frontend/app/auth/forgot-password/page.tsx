@@ -3,379 +3,198 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { FiMail, FiLock, FiArrowLeft, FiCheck, FiLoader, FiAlertCircle } from 'react-icons/fi'
-
-type ForgotPasswordStep = 'email' | 'code' | 'reset'
-
-interface ResetFormData {
-  email: string
-  code: string
-  newPassword: string
-  confirmPassword: string
-}
+import { FiMail, FiLock, FiHash, FiLoader, FiArrowRight, FiArrowLeft, FiCheckCircle } from 'react-icons/fi'
+import { apiClient } from '@/lib/api/client'
 
 export default function ForgotPasswordPage() {
-  const router = useRouter()
-  const [currentStep, setCurrentStep] = useState<ForgotPasswordStep>('email')
-  const [formData, setFormData] = useState<ResetFormData>({
-    email: '',
-    code: '',
-    newPassword: '',
-    confirmPassword: '',
-  })
-
-  const [isLoading, setIsLoading] = useState(false)
+  const [email, setEmail] = useState('')
+  const [code, setCode] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [emailSent, setEmailSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [resetting, setResetting] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const router = useRouter()
 
-  // Step 1: Request Password Reset
-  const handleEmailSubmit = async (e: React.FormEvent) => {
+  const handleSendCode = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
-    setIsLoading(true)
-
-    // Validation
-    if (!formData.email.includes('@')) {
-      setError('Veuillez entrer une adresse email valide')
-      setIsLoading(false)
-      return
-    }
-
+    setSending(true)
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-
-      // Move to next step
-      setCurrentStep('code')
-      setSuccess(true)
-      setTimeout(() => setSuccess(false), 3000)
+      await apiClient.forgotPassword(email)
+      setEmailSent(true)
     } catch (err) {
-      setError('Une erreur est survenue. Veuillez réessayer.')
+      setError(err instanceof Error ? err.message : 'Failed to send reset code')
     } finally {
-      setIsLoading(false)
+      setSending(false)
     }
   }
 
-  // Step 2: Verify Reset Code
-  const handleCodeSubmit = async (e: React.FormEvent) => {
+  const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
-    setIsLoading(true)
 
-    // Validation
-    if (formData.code.length < 6) {
-      setError('Le code doit contenir au moins 6 caractères')
-      setIsLoading(false)
+    if (newPassword !== confirmPassword) {
+      setError('Passwords do not match')
+      return
+    }
+    if (newPassword.length < 8) {
+      setError('Password must be at least 8 characters')
       return
     }
 
+    setResetting(true)
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-
-      // Move to next step
-      setCurrentStep('reset')
+      await apiClient.resetPassword(email, code, newPassword)
       setSuccess(true)
-      setTimeout(() => setSuccess(false), 3000)
+      setTimeout(() => router.push('/auth/login'), 2000)
     } catch (err) {
-      setError('Code invalide. Veuillez vérifier et réessayer.')
+      setError(err instanceof Error ? err.message : 'Reset failed')
     } finally {
-      setIsLoading(false)
-    }
-  }
-
-  // Step 3: Reset Password
-  const handlePasswordSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-    setIsLoading(true)
-
-    // Validation
-    if (formData.newPassword.length < 8) {
-      setError('Le mot de passe doit contenir au moins 8 caractères')
-      setIsLoading(false)
-      return
-    }
-
-    if (formData.newPassword !== formData.confirmPassword) {
-      setError('Les mots de passe ne correspondent pas')
-      setIsLoading(false)
-      return
-    }
-
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-
-      // Success - redirect to login
-      setSuccess(true)
-      setTimeout(() => {
-        router.push('/auth/login')
-      }, 2000)
-    } catch (err) {
-      setError('Une erreur est survenue. Veuillez réessayer.')
-    } finally {
-      setIsLoading(false)
+      setResetting(false)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-        {/* Back Button */}
-        <Link
-          href="/auth/login"
-          className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold mb-6 transition-colors"
-        >
-          <FiArrowLeft className="w-5 h-5" />
-          Retour
-        </Link>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#faf7f2] via-[#f5f1e9] to-[#faf7f2] p-4 relative overflow-hidden">
+      <div className="absolute top-0 -left-32 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 -right-32 w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
 
-        {/* Progress Indicator */}
-        <div className="flex gap-2 mb-8">
-          <div className={`h-1 flex-1 rounded-full ${currentStep === 'email' || currentStep === 'code' || currentStep === 'reset' ? 'bg-blue-600' : 'bg-gray-300'}`} />
-          <div className={`h-1 flex-1 rounded-full ${currentStep === 'code' || currentStep === 'reset' ? 'bg-blue-600' : 'bg-gray-300'}`} />
-          <div className={`h-1 flex-1 rounded-full ${currentStep === 'reset' ? 'bg-blue-600' : 'bg-gray-300'}`} />
-        </div>
-
-        {/* Step 1: Email Verification */}
-        {currentStep === 'email' && (
-          <div>
-            <div className="mb-8 text-center">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Réinitialiser Votre Mot de Passe</h1>
-              <p className="text-gray-600">Entrez votre adresse email pour recevoir un code de réinitialisation</p>
+      <div className="w-full max-w-md z-10 animate-fadeIn">
+        <div className="bg-white/90 backdrop-blur-xl border border-black/[0.06] rounded-2xl shadow-xl shadow-black/[0.04] p-8">
+          {success ? (
+            <div className="text-center py-4">
+              <div className="inline-flex items-center justify-center mb-4 w-12 h-12 bg-emerald-100 rounded-xl">
+                <FiCheckCircle className="w-6 h-6 text-emerald-600" />
+              </div>
+              <h1 className="text-2xl font-bold text-stone-900 mb-1.5">Password reset</h1>
+              <p className="text-stone-500 text-sm">Redirecting you to sign in...</p>
             </div>
-
-            {success && (
-              <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
-                <FiCheck className="w-5 h-5" />
-                <span>Un email a été envoyé à {formData.email}</span>
-              </div>
-            )}
-
-            {error && (
-              <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
-                <FiAlertCircle className="w-5 h-5" />
-                <span>{error}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleEmailSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Adresse Email
-                </label>
-                <div className="relative">
-                  <FiMail className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="vous@example.com"
-                    required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
+          ) : (
+            <>
+              <div className="mb-8 text-center">
+                <div className="inline-flex items-center justify-center mb-4 w-12 h-12 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-600/20">
+                  <FiLock className="w-5 h-5 text-white" />
                 </div>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {isLoading ? (
-                  <>
-                    <FiLoader className="animate-spin" />
-                    Envoi en cours...
-                  </>
-                ) : (
-                  'Envoyer le Code'
-                )}
-              </button>
-
-              <div className="text-center">
-                <p className="text-gray-600 text-sm">
-                  Vous souvenez-vous de votre mot de passe?{' '}
-                  <Link href="/auth/login" className="text-blue-600 hover:text-blue-700 font-semibold">
-                    Connectez-vous
-                  </Link>
+                <h1 className="text-3xl font-bold text-stone-900 mb-1.5">Reset password</h1>
+                <p className="text-stone-500 text-sm">
+                  {emailSent
+                    ? 'Enter the code we sent you and your new password'
+                    : "We'll email you a code to reset your password"}
                 </p>
               </div>
-            </form>
-          </div>
-        )}
 
-        {/* Step 2: Code Verification */}
-        {currentStep === 'code' && (
-          <div>
-            <div className="mb-8 text-center">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Entrez le Code</h1>
-              <p className="text-gray-600">Nous avons envoyé un code à {formData.email}</p>
-            </div>
+              <form onSubmit={emailSent ? handleResetPassword : handleSendCode} className="space-y-4">
+                {/* Email — disabled once code is sent */}
+                <div>
+                  <label className="block text-sm font-medium text-stone-700 mb-1.5">Email address</label>
+                  <div className="relative group">
+                    <FiMail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 w-4.5 h-4.5" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      required
+                      disabled={emailSent}
+                      className="w-full pl-11 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 placeholder-stone-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                    />
+                  </div>
+                </div>
 
-            {success && (
-              <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
-                <FiCheck className="w-5 h-5" />
-                <span>Code vérifié avec succès</span>
-              </div>
-            )}
-
-            {error && (
-              <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
-                <FiAlertCircle className="w-5 h-5" />
-                <span>{error}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleCodeSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Code de Réinitialisation
-                </label>
-                <input
-                  type="text"
-                  value={formData.code}
-                  onChange={(e) => setFormData({ ...formData, code: e.target.value })}
-                  placeholder="000000"
-                  maxLength={6}
-                  required
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-center text-2xl tracking-widest font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <p className="text-xs text-gray-600 mt-2">Le code est valide pendant 10 minutes</p>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {isLoading ? (
+                {emailSent && (
                   <>
-                    <FiLoader className="animate-spin" />
-                    Vérification...
-                  </>
-                ) : (
-                  'Vérifier le Code'
-                )}
-              </button>
+                    {/* Code */}
+                    <div className="animate-fadeIn">
+                      <label className="block text-sm font-medium text-stone-700 mb-1.5">Reset code</label>
+                      <div className="relative group">
+                        <FiHash className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 w-4.5 h-4.5 group-focus-within:text-indigo-500 transition-colors" />
+                        <input
+                          type="text"
+                          value={code}
+                          onChange={(e) => setCode(e.target.value)}
+                          placeholder="6-digit code"
+                          maxLength={6}
+                          required
+                          className="w-full pl-11 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 placeholder-stone-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all duration-200 tracking-widest"
+                        />
+                      </div>
+                    </div>
 
-              <div className="text-center">
+                    {/* New password */}
+                    <div className="animate-fadeIn">
+                      <label className="block text-sm font-medium text-stone-700 mb-1.5">New password</label>
+                      <div className="relative group">
+                        <FiLock className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 w-4.5 h-4.5 group-focus-within:text-indigo-500 transition-colors" />
+                        <input
+                          type="password"
+                          value={newPassword}
+                          onChange={(e) => setNewPassword(e.target.value)}
+                          placeholder="••••••••"
+                          maxLength={72}
+                          required
+                          className="w-full pl-11 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 placeholder-stone-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all duration-200"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Confirm password */}
+                    <div className="animate-fadeIn">
+                      <label className="block text-sm font-medium text-stone-700 mb-1.5">Confirm password</label>
+                      <div className="relative group">
+                        <FiLock className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 w-4.5 h-4.5 group-focus-within:text-indigo-500 transition-colors" />
+                        <input
+                          type="password"
+                          value={confirmPassword}
+                          onChange={(e) => setConfirmPassword(e.target.value)}
+                          placeholder="••••••••"
+                          maxLength={72}
+                          required
+                          className="w-full pl-11 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 placeholder-stone-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all duration-200"
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2.5 rounded-xl text-sm animate-fadeIn">
+                    {error}
+                  </div>
+                )}
+
                 <button
-                  type="button"
-                  onClick={() => {
-                    setCurrentStep('email')
-                    setError('')
-                  }}
-                  className="text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                  type="submit"
+                  disabled={sending || resetting}
+                  className="w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group shadow-lg shadow-indigo-600/25 hover:shadow-xl hover:shadow-indigo-600/30"
                 >
-                  Utiliser une autre adresse email
+                  {sending || resetting ? (
+                    <>
+                      <FiLoader className="animate-spin w-5 h-5" />
+                      <span>{emailSent ? 'Resetting...' : 'Sending...'}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>{emailSent ? 'Reset password' : 'Send reset code'}</span>
+                      <FiArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </button>
-              </div>
-            </form>
-          </div>
-        )}
-
-        {/* Step 3: New Password */}
-        {currentStep === 'reset' && (
-          <div>
-            <div className="mb-8 text-center">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Créer un Nouveau Mot de Passe</h1>
-              <p className="text-gray-600">Entrez un mot de passe fort et sécurisé</p>
-            </div>
-
-            {success && (
-              <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
-                <FiCheck className="w-5 h-5" />
-                <span>Mot de passe réinitialisé. Redirection...</span>
-              </div>
-            )}
-
-            {error && (
-              <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
-                <FiAlertCircle className="w-5 h-5" />
-                <span>{error}</span>
-              </div>
-            )}
-
-            <form onSubmit={handlePasswordSubmit} className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Nouveau Mot de Passe
-                </label>
-                <div className="relative">
-                  <FiLock className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
-                  <input
-                    type="password"
-                    value={formData.newPassword}
-                    onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
-                    placeholder="••••••••"
-                    required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                <p className="text-xs text-gray-600 mt-2">Au moins 8 caractères avec majuscules, minuscules et chiffres</p>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Confirmer le Mot de Passe
-                </label>
-                <div className="relative">
-                  <FiLock className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
-                  <input
-                    type="password"
-                    value={formData.confirmPassword}
-                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                    placeholder="••••••••"
-                    required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-              </div>
-
-              {/* Password Requirements */}
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                <p className="text-xs font-semibold text-gray-700 mb-2">Exigences du Mot de Passe :</p>
-                <ul className="text-xs text-gray-600 space-y-1">
-                  <li className={formData.newPassword.length >= 8 ? 'text-green-600' : ''}>
-                    ✓ Au moins 8 caractères
-                  </li>
-                  <li className={/[A-Z]/.test(formData.newPassword) ? 'text-green-600' : ''}>
-                    ✓ Au moins une lettre majuscule
-                  </li>
-                  <li className={/[a-z]/.test(formData.newPassword) ? 'text-green-600' : ''}>
-                    ✓ Au moins une lettre minuscule
-                  </li>
-                  <li className={/[0-9]/.test(formData.newPassword) ? 'text-green-600' : ''}>
-                    ✓ Au moins un chiffre
-                  </li>
-                </ul>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isLoading || formData.newPassword.length < 8}
-                className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {isLoading ? (
-                  <>
-                    <FiLoader className="animate-spin" />
-                    Réinitialisation en cours...
-                  </>
-                ) : (
-                  'Réinitialiser le Mot de Passe'
-                )}
-              </button>
-            </form>
-          </div>
-        )}
-
-        {/* Security Info */}
-        <div className="mt-8 pt-8 border-t border-gray-200">
-          <p className="text-xs text-gray-600 text-center">
-            🔒 Vos données sont sécurisées et chiffrées. Nous ne partageons jamais vos informations personnelles.
-          </p>
+              </form>
+            </>
+          )}
         </div>
+
+        {!success && (
+          <p className="text-center text-stone-500 mt-6 text-sm">
+            <Link href="/auth/login" className="text-indigo-600 font-semibold hover:text-indigo-700 transition-colors inline-flex items-center gap-1.5">
+              <FiArrowLeft className="w-3.5 h-3.5" />
+              Back to login
+            </Link>
+          </p>
+        )}
       </div>
     </div>
   )

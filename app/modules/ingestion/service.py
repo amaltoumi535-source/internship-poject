@@ -95,6 +95,31 @@ class IngestionService:
                 extraction = DOCXParser.extract(tmp_path)
                 result["parser"] = "python-docx"
 
+            # Excel
+            elif ext in [".xlsx", ".xls"]:
+                try:
+                    import openpyxl
+                except ImportError:
+                    raise RuntimeError("openpyxl not installed. Install with: pip install openpyxl")
+
+                wb = openpyxl.load_workbook(tmp_path, data_only=True)
+                text_parts = []
+                for sheet_name in wb.sheetnames:
+                    sheet = wb[sheet_name]
+                    text_parts.append(f"--- Sheet: {sheet_name} ---")
+                    for row in sheet.iter_rows(values_only=True):
+                        row_text = " | ".join(str(cell) for cell in row if cell is not None)
+                        if row_text.strip():
+                            text_parts.append(row_text)
+
+                full_text = "\n".join(text_parts)
+                extraction = {
+                    "text": full_text,
+                    "metadata": {"parser": "openpyxl", "sheet_count": len(wb.sheetnames)},
+                    "pages": [{"page_num": 1, "text": full_text, "confidence": 1.0}]
+                }
+                result["parser"] = "openpyxl"
+
             # Images (common image types)
             elif ext in [".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif", ".webp"]:
                 extraction = OCRParser.extract(tmp_path, lang=lang)

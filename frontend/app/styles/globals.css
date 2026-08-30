@@ -4,7 +4,7 @@
 
 @layer utilities {
   .animate-fadeIn {
-    animation: fadeIn 0.3s ease-in;
+    animation: fadeIn 0.35s ease-out;
   }
 
   .animation-delay-100 {
@@ -14,20 +14,12 @@
   .animation-delay-200 {
     animation-delay: 200ms;
   }
-
-  .animation-delay-2000 {
-    animation-delay: 2000ms;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4000ms;
-  }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -39,6 +31,38 @@
   @apply scroll-smooth;
 }
 
+html {
+  --bg-app-from: #faf7f2;
+  --bg-app-via: #f5f1e9;
+  --bg-app-to: #faf7f2;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-solid: rgba(255, 255, 255, 0.98);
+  --surface-soft: rgba(15, 23, 42, 0.03);
+  --surface-strong: rgba(15, 23, 42, 0.05);
+  --surface-hover: rgba(15, 23, 42, 0.05);
+  --surface-hover-strong: rgba(15, 23, 42, 0.09);
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.14);
+  --text-primary: #1c1a17;
+  --text-secondary: #57534e;
+  --text-muted: #8a8580;
+  --accent-from: #6366f1;
+  --accent-to: #4f46e5;
+}
+
 body {
-  @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900;
+  background: linear-gradient(to bottom right, var(--bg-app-from), var(--bg-app-via), var(--bg-app-to));
+  color: var(--text-primary);
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+/* Subtle scale feedback on interactive elements */
+button {
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+button:active:not(:disabled) {
+  transform: scale(0.98);
 }

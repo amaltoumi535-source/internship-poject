@@ -10,6 +10,10 @@ export interface ReportOverview {
 export interface DocReport {
   document_id: number;
   title: string | null;
+  created_at: string | null;
+  size_bytes: number | null;
+  mime: string | null;
+  page_count: number | null;
   chunk_count: number;
   avg_chunk_length: number;
   sample_snippets: string[];
